@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wee~Haru 微春工作室｜接案服務與作品展示</title>
+  <meta name="description" content="Wee~Haru 接案｜電商設計、平面設計、短影片剪輯｜價目表與案例展示" />
+  <!-- 引入 FontAwesome 圖示庫 (IG / LINE / Email Icon 使用) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#fbf7f2;
+      --card:#ffffff;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --line:rgba(0,0,0,.08);
+      --accent:#6f8a7b;   /* 奶油系綠 */
+      --accent2:#a6735a;  /* 奶茶棕 */
+      --accent3:#f4d8ce;  /* 奶油粉/奶茶粉 */
+      --shadow:0 12px 30px rgba(0,0,0,.06);
+      --radius:22px;
+      --max:1040px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 18% -10%, rgba(216,164,143,.24), transparent 60%),
+        radial-gradient(900px 500px at 92% 0%, rgba(166,115,90,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      scroll-behavior: smooth;
+    }
+    a{text-decoration:none; color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    
+    /* Topbar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width: 240px;}
+    
+    /* LOGO 再放大 (改為 100px) */
+    .logo{
+      width:100px; height:100px; border-radius:28px;
+      background-color: #f3e5d8;
+      background-image: url('logo.jpg'); 
+      background-size: cover;
+      background-position: center;
+      border:1px solid var(--line);
+      box-shadow: 0 4px 14px rgba(0,0,0,.05);
+    }
+    
+    .brand h1{font-size:18px; margin:0}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .btns{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 18px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(255,255,255,.65);
+      font-weight:800; font-size:13px;
+      backdrop-filter: blur(6px);
+      cursor:pointer;
+      transition: all 0.2s ease;
+    }
+    .btn:hover{background:rgba(255,255,255,.9);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent2), #c08a73);
+      color:white; border:none;
+      box-shadow: 0 10px 22px rgba(166,115,90,.22);
+    }
+    .btn.primary:hover{ transform: translateY(-2px); box-shadow: 0 12px 26px rgba(166,115,90,.3); }
+
+    /* Hero */
+    .hero{
+      margin-top:10px;
+      display:grid; grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+    }
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      backdrop-filter: blur(8px);
+    }
+    /* Slogan 字體再調小 (改為 18px) */
+    .hero h2{margin:0 0 12px 0; font-size:18px; font-weight: 700; letter-spacing:1px; line-height: 1.5; color: #333;}
+    .hero h2 span.x {
+      font-size: 0.85em;
+      opacity: 0.6;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+    .sub{margin:0; color:var(--muted); font-size: 14px; line-height: 1.8;}
+    .tags{
+      display:flex; gap:8px; flex-wrap:wrap;
+      margin-top:24px;
+    }
+    .tag{
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      background:rgba(216,164,143,.16);
+      border:1px solid rgba(216,164,143,.22);
+      white-space:nowrap;
+    }
+    .tag.brown{
+      background:rgba(166,115,90,.14);
+      border:1px solid rgba(166,115,90,.20);
+    }
+    .mini{display:grid; gap:10px}
+    .mini .box{
+      border-radius:18px; padding:14px;
+      background: rgba(255,255,255,.82);
+      border:1px dashed rgba(0,0,0,.12);
+    }
+    .mini .box b{display:block; margin-bottom:4px}
+
+    /* Grid & Pricing */
+    .grid{margin-top:18px; display:grid; grid-template-columns: repeat(12, 1fr); gap:14px;}
+    .col12{grid-column: span 12;}
+    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:10px; margin-bottom:10px;}
+    .sectionTitle h3{margin:0; font-size:18px}
+    .sectionTitle span{color:var(--muted); font-size:12px}
+
+    .pillTitle{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      background:rgba(216,164,143,.18);
+      border:1px solid rgba(216,164,143,.22);
+      font-weight:900;
+      width: fit-content;
+      margin: 18px 0 6px;
+    }
+    .pillTitle.brown{
+      background:rgba(166,115,90,.12);
+      border:1px solid rgba(166,115,90,.18);
+    }
+    .pillTitle.pink{
+      background:rgba(244, 216, 206, 0.4);
+      border:1px solid rgba(244, 216, 206, 0.6);
+    }
+
+    table{width:100%; border-collapse:separate; border-spacing:0 10px;}
+    th{ text-align:left; font-size:12px; color:var(--muted); font-weight:900; padding:0 10px;}
+    td{
+      background:rgba(255,255,255,.88);
+      border:1px solid var(--line);
+      padding:14px 10px;
+      font-size:14px;
+      vertical-align:top;
+    }
+    tr td:first-child{border-radius:16px 0 0 16px}
+    tr td:last-child{border-radius:0 16px 16px 0}
+    .price{font-weight:900; white-space:nowrap;}
+
+    .noteBox{
+      padding:14px; border-radius:18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid var(--line);
+      margin-top:10px;
+    }
+    .noteList{margin:0; padding-left:18px; color:var(--muted); font-size:13px}
+    .noteList li{margin-bottom: 6px;}
+
+    /* Cases */
+    .caseGrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+    .caseCard{
+      grid-column: span 4;
+      border-radius:22px;
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-height: 250px;
+    }
+    .caseThumb{
+      height: 140px;
+      background: radial-gradient(rgba(216,164,143,.25), transparent), rgba(255,255,255,.6);
+      border-bottom:1px solid var(--line);
+      background-size: cover;
+      background-position: center;
+      position: relative; /* 為了讓保護標籤定位 */
+    }
+
+    /* 局部資訊保護標籤樣式 */
+    .badge-protect {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(43, 43, 43, 0.7);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: bold;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .caseBody{padding:14px}
+    .caseBody b{display:block; margin-bottom:6px}
+    .caseBody p{margin:0; color:var(--muted); font-size:13px}
+    .caseActions{padding:0 14px 14px; margin-top:auto}
+
+    /* Modal (圖片彈出視窗) */
+    .modal{
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 50;
+    }
+    .modal.open{display:flex;}
+    .modalPanel{
+      width: min(980px, 100%);
+      height: min(92vh, 920px);
+      background: rgba(255,255,255,.95);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.25);
+      overflow:hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.28);
+      display:flex;
+      flex-direction:column;
+    }
+    .modalTop{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; padding:12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.92);
+    }
+    .modalTop b{font-size:14px}
+    .closeBtn{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:999px;
+      border:1px solid var(--line); background: rgba(255,255,255,.78);
+      cursor:pointer; transition: transform .08s ease;
+    }
+    .closeBtn:active{transform: scale(.98)}
+    .closeBtn svg{width:18px; height:18px; opacity:.75}
+    .modalBody{ padding: 12px; overflow:auto; }
+    .caseImgWrap{
+      position: relative; border-radius: 18px;
+      overflow:hidden; border:1px solid var(--line);
+      background: rgba(255,255,255,.9);
+    }
+    .caseImgWrap img{ width:100%; height:auto; display:block; }
+    .wm{
+      position:absolute; left:50%; transform: translateX(-50%); bottom: 14px;
+      text-align:center; font-weight:800; font-size: 12px; line-height: 1.25;
+      color: rgba(255,255,255,.42); text-shadow: 0 1px 2px rgba(0,0,0,.25);
+      pointer-events:none; padding: 6px 10px; border-radius: 12px;
+      background: rgba(0,0,0,.08); backdrop-filter: blur(2px);
+    }
+    .wm span{display:block}
+    .hint{ font-size:12px; color: var(--muted); margin: 10px 2px 0; }
+
+    /* Contact Card (名片樣式) */
+    .contact-brand-card {
+      background-color: var(--accent3); /* 奶油粉背景 */
+      border-radius: var(--radius);
+      padding: 35px 30px;
+      color: #ffffff; /* 白色文字 */
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* 名片裝飾光暈 */
+    .contact-brand-card::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 35px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-info-list li {
+      font-size: 16px;
+      margin-bottom: 16px;
+      letter-spacing: 0.8px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    .contact-social-icons {
+      display: flex;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .social-icon-btn {
+      width: 48px;
+      height: 48px;
+      background: #ffffff;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,.08);
+    }
+    /* 圖示顏色設定 */
+    .social-icon-btn.ig { color: #e1306c; }
+    .social-icon-btn.line { color: #00b900; }
+    .social-icon-btn.email { color: var(--accent2); } /* 信封使用奶茶棕色 */
+    .social-icon-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 16px rgba(0,0,0,.12); }
+
+    /* FAQ */
+    .faq details{
+      background:rgba(255,255,255,.84);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      margin-bottom:10px;
+    }
+    .faq summary{ cursor:pointer; font-weight:900; list-style:none; }
+    .faq p{margin:10px 0 0 0; color:var(--muted); font-size:13px}
+
+    .footer{margin:30px 0 10px; text-align:center; color:var(--muted); font-size:12px; letter-spacing: 0.5px;}
+
+    @media (max-width: 980px){
+      .caseCard{grid-column: span 12;}
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr;}
+      .hero h2{font-size:26px}
+      .btns{justify-content:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- 頂部導航 -->
+    <header class="topbar">
+      <div class="brand">
+        <!-- 這裡會讀取同資料夾下的 logo.jpg -->
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Wee~Haru｜微春工作室</h1>
+          <p>小小靈感起源地 ☁️</p>
+        </div>
+      </div>
+      <div class="btns">
+        <a class="btn" href="#pricing">價目表</a>
+        <a class="btn" href="#cases">案例展示</a>
+        <a class="btn primary" href="#contact">立即聯絡</a>
+      </div>
+    </header>
+
+    <!-- 首頁橫幅區 -->
+    <section class="hero">
+      <div class="card">
+        <!-- 將「✕」縮小一點點 -->
+        <h2>清晰視覺 <span style="font-size: 0.8em; opacity: 0.85; margin: 0 2px;">✕</span> 舒心合作，讓你的品牌自然發光。</h2>
+        <p class="sub">
+          主打乾淨好讀、重點明確的奶油系風格。提供高質感的電商設計、平面設計與短影片剪輯，給你順暢無壓的接案體驗。
+        </p>
+
+        <div class="tags">
+          <span class="tag">電商主副圖</span>
+          <span class="tag brown">Banner / 一頁式</span>
+          <span class="tag">社群貼文 / 限動</span>
+          <span class="tag brown">海報 / DM / 菜單</span>
+          <span class="tag">短影片剪輯</span>
+        </div>
+
+        <div class="btns" style="margin-top:20px; justify-content:flex-start;">
+          <!-- 放入 Behance 完整作品集連結 -->
+          <a class="btn primary" href="https://www.behance.net/gallery/241846107/Portfolio-2025" target="_blank" rel="noopener">查看完整作品集</a>
+          <a class="btn" href="#cases">精選案例展示</a>
+        </div>
+      </div>
+
+      <div class="card mini">
+        <div class="box">
+          <b>聯絡方式</b>
+          <div class="muted" style="font-size:13px;">
+            IG：@51haru.studio<br/>
+            Email：hsuan.studio25@gmail.com
+          </div>
+        </div>
+        <div class="box">
+          <b>交付格式</b>
+          <div class="muted" style="font-size:13px;">JPG / PNG / PDF</div>
+        </div>
+        <div class="box">
+          <b>修改範圍</b>
+          <div class="muted" style="font-size:13px;">含 1 次大改 + 3 次微調（超過另計）</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設計案例區 -->
+    <section class="grid" id="cases">
+      <div class="col12 card">
+        <div class="sectionTitle">
+          <h3>設計案例展示</h3>
+          <span>實際商業專案展示</span>
+        </div>
+        <div class="caseGrid">
+          <div class="caseCard">
+            <div class="caseThumb" style="background-image:url('case-lanna.jpg');">
+              <!-- 植入局部保護標籤 -->
+              <div class="badge-protect"><i class="fa-solid fa-eye-slash" style="margin-right:4px;"></i>局部資訊保護</div>
+            </div>
+            <div class="caseBody">
+              <b>一頁式商品廣告視覺(1)</b>
+              <p>透過留白與版面配置，讓商品賣點清晰呈現。</p>
+            </div>
+            <div class="caseActions"><a class="btn primary" style="width:100%" href="#" data-open="modal-lanna">查看長圖展示</a></div>
+          </div>
+          <div class="caseCard">
+            <div class="caseThumb" style="background-image:url('case-incense.jpg');">
+              <!-- 植入局部保護標籤 -->
+              <div class="badge-protect"><i class="fa-solid fa-eye-slash" style="margin-right:4px;"></i>局部資訊保護</div>
+            </div>
+            <div class="caseBody">
+              <b>一頁式商品廣告視覺(2)</b>
+              <p>以情境氛圍為主，讓視覺聚焦、資訊好讀。</p>
+            </div>
+            <div class="caseActions"><a class="btn primary" style="width:100%" href="#" data-open="modal-incense">查看長圖展示</a></div>
+          </div>
+          <div class="caseCard">
+            <div class="caseThumb"></div>
+            <div class="caseBody">
+              <b>品牌重塑再造</b>
+              <p>實際商業品牌再造專案，包含 LOGO 重新設計與整體視覺調性定調。</p>
+            </div>
+            <div class="caseActions">
+              <a class="btn" style="width:100%" href="https://www.behance.net/gallery/242228703/LOGO" target="_blank" rel="noopener">觀看品牌專案 (Behance)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 獨立出來的完整作品集大按鈕 -->
+        <div style="text-align: center; margin-top: 32px;">
+          <a class="btn primary" style="padding: 14px 28px; font-size: 15px; border-radius: 999px;" href="https://www.behance.net/gallery/241846107/Portfolio-2025" target="_blank" rel="noopener">
+            <i class="fa-solid fa-briefcase" style="margin-right: 8px;"></i> 查看 Wee~Haru 完整設計作品集
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 價目表區 -->
+    <section class="grid" id="pricing">
+      <div class="col12 card">
+        <div class="sectionTitle">
+          <h3>價目表 Design Price List</h3>
+          <span>實際費用依專案複雜度與需求調整</span>
+        </div>
+
+        <div class="pillTitle">電商設計</div>
+        <table>
+          <thead><tr><th>項目</th><th>說明</th><th>價格</th></tr></thead>
+          <tbody>
+            <tr><td><b>FB/IG 社群貼文</b></td><td>不含主題發想，多圖 +$100 / 張</td><td class="price">$500 / 篇 ( 5 張 )</td></tr>
+            <tr><td><b>FB/IG 社群限動</b></td><td>不含主題發想</td><td class="price">$300 ↑ / 則</td></tr>
+            <tr><td><b>商品主圖</b></td><td>需提供素材</td><td class="price">$500 / 張</td></tr>
+            <tr><td><b>商品副圖</b></td><td>需提供素材</td><td class="price">$250 / 張</td></tr>
+            <tr><td><b>BANNER 設計</b></td><td>依尺寸/複雜度調整</td><td class="price">$800 ↑ / 張</td></tr>
+            <tr><td><b>一頁式 ( 商品介紹 )</b></td><td>依內容量與區塊數調整</td><td class="price">$2000 ↑ / 張</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pillTitle brown">平面設計</div>
+        <table>
+          <thead><tr><th>項目</th><th>說明</th><th>價格</th></tr></thead>
+          <tbody>
+            <tr><td><b>名片設計</b></td><td>依版面需求調整</td><td class="price">$1000 / 面</td></tr>
+            <tr><td><b>A3 海報設計</b></td><td>依資訊量調整</td><td class="price">$1000 ↑ / 張</td></tr>
+            <tr><td><b>A4 DM / 傳單設計</b></td><td>依資訊量調整</td><td class="price">$1000 ↑ / 張</td></tr>
+            <tr><td><b>菜單設計</b></td><td>依頁數/品項數調整</td><td class="price">$1000 ↑ / 張</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pillTitle pink">其他項目</div>
+        <table>
+          <thead><tr><th>項目</th><th>說明</th><th>價格</th></tr></thead>
+          <tbody>
+            <tr><td><b>短影片剪輯</b></td><td>60s 內 ( 需提供素材 )</td><td class="price">$500 ↑ / 60s 內</td></tr>
+            <tr><td><b>短影片剪輯</b></td><td>60s 以上 ( 需提供素材 )</td><td class="price">$1000 ↑ / 60s+</td></tr>
+          </tbody>
+        </table>
+
+        <div class="noteBox">
+          <b>備註</b>
+          <ul class="noteList">
+            <li>皆包含 1 次大改 + 3 次微調 ( 超過 $100 / 張 )。</li>
+            <li>以上報價不含印刷。</li>
+            <li>以上為參考報價，實際費用依專案複雜度與需求調整。</li>
+            <li>交付格式 : JPG / PNG / PDF。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常見問題區 -->
+    <section class="grid" id="faq">
+      <div class="col12 card faq">
+        <div class="sectionTitle"><h3>常見問題</h3></div>
+        <details>
+          <summary>可以做不同平台的尺寸嗎？</summary>
+          <p>沒問題！請告知您使用的平台（如 1shop / 蝦皮 / IG）或需要的具體尺寸即可。</p>
+        </details>
+        <details>
+          <summary>會提供可編輯原始檔嗎？</summary>
+          <p>一般交付為 PNG/JPG 檔。若有原始檔需求可於報價時加購（依設計工具而定）。</p>
+        </details>
+        <details>
+          <summary>修改次數如何計算？</summary>
+          <p>報價皆包含 1 次大改與 3 次微調。若超過次數，將視修改幅度酌收工本費（約 $100 / 張）。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 聯絡我區 -->
+    <section class="grid" id="contact">
+      <div class="col12 card">
+        <div class="sectionTitle">
+          <h3>聯絡我</h3>
+        </div>
+
+        <p class="sub" style="margin-top:0;">
+          你可以直接複製下面這段私訊格式給我，我會回覆報價與可排期：
+        </p>
+
+        <!-- 複製文字區塊 -->
+        <div class="noteBox" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:13px;">
+          【接案需求】<br/>
+          1) 品項：<br/>
+          2) 尺寸/平台：<br/>
+          3) 內容/文案是否提供：<br/>
+          4) 素材是否提供（照片/Logo/產品圖）：<br/>
+          5) 風格參考（連結/圖片）：<br/>
+          6) 希望交付日期：<br/>
+        </div>
+
+        <!-- 粉色名片感聯絡區塊 -->
+        <div class="contact-brand-card">
+          <ul class="contact-info-list">
+            <li>品牌名稱 ： Wee~Haru</li>
+            <li>工作室名稱 ： 微春工作室</li>
+            <li>Instagram ： 51haru.studio</li>
+            <li>LINE ： 點擊下方圖示加好友</li>
+          </ul>
+
+          <div class="contact-social-icons">
+            <a href="https://www.instagram.com/51haru.studio?igsh=ank3Nno4cTF4YXRy&utm_source=qr" target="_blank" rel="noopener" class="social-icon-btn ig" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://line.me/ti/p/gEnseE7eS5" target="_blank" rel="noopener" class="social-icon-btn line" title="LINE">
+              <i class="fa-brands fa-line"></i>
+            </a>
+            <a href="mailto:hsuan.studio25@gmail.com" class="social-icon-btn email" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Wee~Haru 微春工作室. All rights reserved.
+    </div>
+  </div>
+
+  <!-- MODALS (加入保護提示文字) -->
+  <div class="modal" id="modal-lanna" aria-hidden="true">
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="案例展示｜一頁式長圖">
+      <div class="modalTop">
+        <b>案例展示｜一頁式商品廣告視覺（實際專案）</b>
+        <button class="closeBtn" type="button" data-close aria-label="關閉">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 7L17 17M17 7L7 17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modalBody">
+        <div class="caseImgWrap">
+          <img src="case-lanna.jpg" alt="案例長圖展示" />
+          <div class="wm">
+            <span>Design by Wee~Haru｜作品集展示用</span>
+            <span>Portfolio display only</span>
+          </div>
+        </div>
+        <!-- 植入保護提示文字，並依要求將字體稍稍放大 -->
+        <p class="hint" style="margin-top:15px; color: #888; font-size: 14px; line-height: 1.6;">＊本專案已實際上架。為尊重業主合約流程，目前展示版本已將部分品牌與商業資訊進行模糊保護。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-incense" aria-hidden="true">
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="案例展示｜一頁式長圖">
+      <div class="modalTop">
+        <b>案例展示｜一頁式商品廣告視覺（實際專案）</b>
+        <button class="closeBtn" type="button" data-close aria-label="關閉">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 7L17 17M17 7L7 17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modalBody">
+        <div class="caseImgWrap">
+          <img src="case-incense.jpg" alt="案例長圖展示" />
+          <div class="wm">
+            <span>Design by Wee~Haru｜作品集展示用</span>
+            <span>Portfolio display only</span>
+          </div>
+        </div>
+        <!-- 植入保護提示文字，並依要求將字體稍稍放大 -->
+        <p class="hint" style="margin-top:15px; color: #888; font-size: 14px; line-height: 1.6;">＊本專案已實際上架。為尊重業主合約流程，目前展示版本已將部分品牌與商業資訊進行模糊保護。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // 檢查 LOGO 圖片是否載入成功
+    const fallbackText = document.getElementById('logo-fallback');
+    const img = new Image();
+    img.src = 'wee~haruLOGO.jpg';
+    img.onload = () => { if(fallbackText) fallbackText.style.display = 'none'; };
+    img.onerror = () => {
+        const img2 = new Image();
+        img2.src = 'logo.jpg';
+        img2.onload = () => { if(fallbackText) fallbackText.style.display = 'none'; };
+    };
+
+    // open modal
+    document.querySelectorAll('[data-open]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = btn.getAttribute('data-open');
+        const modal = document.getElementById(id);
+        if(modal){
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // close modal
+    function closeModal(modal){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-close]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const modal = btn.closest('.modal');
+        if(modal) closeModal(modal);
+      });
+    });
+    document.querySelectorAll('.modal').forEach(modal=>{
+      modal.addEventListener('click', (e)=>{
+        if(e.target === modal) closeModal(modal);
+      });
+    });
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        document.querySelectorAll('.modal.open').forEach(m=>closeModal(m));
+      }
+    });
+  </script>
+</body>
+</html>
