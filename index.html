@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- ================= 基本 SEO 設定 ================= -->
-  <title>Wee~Haru Studio｜視覺設計・電商頁面・內容整合</title>
-  <meta name="description" content="提供視覺設計、電商頁面設計與內容整合，協助品牌清楚傳達內容與風格。" />
-  <meta name="keywords" content="Wee~Haru, 微春工作室, 接案設計, 電商視覺, 平面設計, 短影音剪輯, 視覺設計, 網頁排版, 內容整合" />
+  <title>Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯</title>
+  <meta name="description" content="Wee~Haru 微春工作室由 Pipi 與 Sho 共同提供視覺設計、電商圖片、平面設計、太陽能光電申請圖說，以及遊戲與漫畫等娛樂文本翻譯及校稿服務。" />
+  <meta name="keywords" content="Wee~Haru, 微春工作室, Pipi, Sho, 視覺設計, 電商設計, 平面設計, LOGO設計, 社群圖片, 圖片編修, 太陽能光電申請圖說, 遊戲翻譯, 漫畫翻譯, 中日英翻譯, 校稿" />
   <meta name="author" content="Wee~Haru 微春工作室" />
 
   <!-- ================= 社群分享 (Facebook / LINE / IG) Open Graph 設定 ================= -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wee~Haru Studio｜視覺設計・電商頁面・內容整合" />
-  <meta property="og:description" content="提供視覺設計、電商頁面設計與內容整合，協助品牌清楚傳達內容與風格。" />
-  <meta property="og:url" content="https://weeharu.design/" /> <!-- 這裡可以換成你最終購買的網址 -->
+  <meta property="og:title" content="Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯" />
+  <meta property="og:description" content="視覺設計、電商與平面設計、光電申請圖說，以及遊戲／漫畫翻譯與校稿。由 Pipi 與 Sho 依專業分工合作。" />
+  <meta property="og:url" content="https://weeharu-design.github.io/weeharu.design/" /> <!-- 若未來啟用自訂網域，記得同步更新 -->
   <meta property="og:site_name" content="Wee~Haru 微春工作室" />
-  <meta property="og:image" content="og-image.jpg" /> <!-- 建議準備一張 1200x630 的預覽圖 -->
+  <meta property="og:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" /> <!-- 圖檔請放在網站根目錄，建議 1200x630 -->
 
   <!-- ================= Twitter 分享設定 ================= -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Wee~Haru Studio｜視覺設計・電商頁面・內容整合" />
-  <meta name="twitter:description" content="提供視覺設計、電商頁面設計與內容整合，協助品牌清楚傳達內容與風格。" />
-  <meta name="twitter:image" content="og-image.jpg" />
+  <meta name="twitter:title" content="Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯" />
+  <meta name="twitter:description" content="視覺設計、電商與平面設計、光電申請圖說，以及遊戲／漫畫翻譯與校稿。由 Pipi 與 Sho 依專業分工合作。" />
+  <meta name="twitter:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" />
 
   <!-- ================= 網址圖標 (Favicon) 設定 ================= -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -219,6 +219,27 @@
       font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 20px;
     }
 
+
+    /* 雙人團隊區：沿用原本 founder-card 的排版、圓角與陰影 */
+    .founder-card + .founder-card { margin-top: 32px; }
+    .photo-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      text-align: center; color: var(--muted); font-size: 13px;
+      padding: 20px; pointer-events: none;
+    }
+    .photo-placeholder i { font-size: 26px; opacity: 0.6; }
+    .sho-card .photo-placeholder { color: #173D37; }
+
+    /* Sho 專屬配色：只影響 Sho 卡片，不動全站的 Pipi／原有配色 */
+    .founder-card.sho-card { background: #F6F3EA; }
+    .sho-card .founder-photo { background-color: #80988C; }
+    .sho-card .founder-info h3 { color: #173D37; }
+    .sho-card .founder-info span.subtitle { color: #80988C; }
+    .sho-card .founder-info .role { color: #173D37; border-bottom-color: rgba(23,61,55,.15); }
+    .sho-card .btn-outline { background: #DFC6A3; border-color: #DFC6A3; color: #173D37; }
+    .sho-card .btn-outline:hover { background: #173D37; border-color: #173D37; color: #F6F3EA; }
+
     /* --- 新增：合作經驗 (Project Experience) 區塊 --- */
     .exp-section {
       background: #fff;
@@ -248,37 +269,6 @@
       font-size: 14px; color: var(--text); line-height: 1.8; margin: 0;
     }
 
-    /* 交錯排版 (Cases) */
-    .case-row {
-      display: flex; align-items: center; gap: 60px; margin-bottom: 120px;
-    }
-    .case-row:nth-child(even) { flex-direction: row-reverse; }
-    
-    .case-image-wrapper {
-      flex: 1.2; width: 100%; position: relative; border-radius: 24px; overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    }
-    .case-image {
-      width: 100%; aspect-ratio: 4 / 3; 
-      background-size: cover; background-position: center;
-      transition: transform 0.5s ease;
-    }
-    .case-row:hover .case-image { transform: scale(1.03); }
-    
-    /* 局部資訊保護標籤 */
-    .badge-protect {
-      position: absolute; top: 16px; right: 16px;
-      background: rgba(43, 43, 43, 0.7); color: #fff;
-      padding: 6px 14px; border-radius: 999px;
-      font-size: 11px; font-weight: bold; letter-spacing: 1px;
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      z-index: 10;
-    }
-
-    .case-info { flex: 0.8; }
-    .case-info h3 { font-size: 28px; margin-bottom: 16px; line-height: 1.4; }
-    .case-info p { color: var(--muted); margin-bottom: 30px; font-size: 15px; }
-    
     .btn-outline {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       padding: 14px 28px; border: 1px solid var(--line); border-radius: 999px;
@@ -287,13 +277,6 @@
       outline: none; -webkit-tap-highlight-color: transparent;
     }
     .btn-outline:hover { background: var(--accent3); border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.05);}
-
-    /* CTA 滿版按鈕區 */
-    .cta-banner {
-      background: var(--accent3); border-radius: 32px; padding: 60px 40px;
-      text-align: center; margin-bottom: 60px;
-    }
-    .cta-banner h3 { font-size: 24px; margin-bottom: 20px; color: var(--accent2); font-weight: 800;}
 
     /* 價目表 */
     .pricing-section { background: #fff; border-radius: 40px; padding: 80px 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); scroll-margin-top: 100px; }
@@ -381,66 +364,65 @@
       display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--accent2);
     }
     .s-card.ig .s-icon { background: #fee2e9; color: #e1306c; }
-    .s-card.line .s-icon { background: #e0f5e0; color: #00b900; }
     .s-info h4 { font-size: 16px; margin-bottom: 4px; color: var(--text);}
     .s-info p { font-size: 13px; color: var(--muted); }
 
-    .copyright { text-align: center; margin-top: 80px; font-size: 12px; color: var(--muted); letter-spacing: 1px;}
+    /* 頁尾版權：維持原本低調的小字與淺色，不影響其他段落 */
+    .copyright { text-align: center; margin-top: 80px; font-size: 11px; color: #AAA6A2; letter-spacing: 0.4px; line-height: 1.7; }
+    .copyright p + p { margin-top: 4px; }
 
     /* 電腦與手機文字自動切換 */
     .mobile-text { display: none; }
     
     /* 修正瞄點位置，避免被頂部導航列遮住 */
-    #about, #work, #pricing, #contact { scroll-margin-top: 100px; }
+    #about, #pricing, #contact { scroll-margin-top: 100px; }
 
-    /* Modals */
-    .modal{ position: fixed; inset: 0; background: rgba(0,0,0,.7); display:none; align-items:center; justify-content:center; padding: 20px; z-index: 100; backdrop-filter: blur(5px);}
-    .modal.open{display:flex;}
-    .modalPanel{ width: min(1000px, 100%); height: min(92vh, 950px); background: white; border-radius: 24px; overflow:hidden; display:flex; flex-direction:column; }
-    .modalTop{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom: 1px solid var(--line); }
-    .closeBtn{ border:none; background:none; font-size: 32px; cursor:pointer; opacity: 0.4; outline: none; transition: transform 0.2s;}
-    .closeBtn:active { transform: scale(0.8); }
-    .modalBody{ padding: 24px; overflow:auto; flex-grow: 1; }
-    .caseImgWrap{ position: relative; border-radius: 12px; overflow:hidden; border:1px solid var(--line); }
-    .caseImgWrap img{ width:100%; height:auto; display:block; }
-    .wm{ position:absolute; left:50%; transform: translateX(-50%); bottom: 20px; text-align:center; font-weight:800; font-size: 12px; color: rgba(255,255,255,.6); text-shadow: 0 1px 2px rgba(0,0,0,0.5); padding: 8px 16px; border-radius: 12px; background: rgba(0,0,0,0.2); backdrop-filter: blur(4px); }
-
-    /* 手機版排版優化 */
-    @media (max-width: 900px){
+    /* 平板與手機響應式排版：保留四個導覽連結 */
+    @media (max-width: 900px) {
       .container { padding: 0 24px; }
-      .header { padding: 15px 24px; }
+      .header { padding: 15px 24px; flex-wrap: wrap; gap: 12px; }
+      .nav-links { gap: 14px; font-size: 13px; }
       .hero { min-height: 70vh; padding-top: 140px; }
       .hero h2 { font-size: 18px; }
-      
-      /* 手機版隱藏右側大 LOGO 裝飾 */
       .hero-bg-logo { display: none; }
-      
-      /* 關於我區塊 手機版優化 */
       .about-header h2 { font-size: 28px; }
       .founder-card { flex-direction: column; gap: 30px; padding: 30px 24px; }
       .founder-photo { width: 100%; aspect-ratio: 1/1; }
       .founder-info h3 { font-size: 26px; }
-      
       .exp-section { padding: 30px 24px; margin-top: 24px; }
       .exp-grid { grid-template-columns: 1fr; gap: 24px; }
-
       .desktop-text { display: none; }
       .mobile-text { display: inline; }
-      
-      .case-row { flex-direction: column !important; gap: 24px; margin-bottom: 80px; }
-      .case-image-wrapper { width: 100%; }
-      .case-image { aspect-ratio: 1 / 1; }
-      .case-info h3 { font-size: 24px; }
-
       .pricing-section { padding: 40px 24px; border-radius: 24px; }
-      .price-row { flex-direction: column; align-items: flex-start; gap: 4px; padding: 16px 0;}
+      .price-row { flex-direction: column; align-items: flex-start; gap: 4px; padding: 16px 0; }
       .p-title, .p-amount { width: 100%; text-align: left; }
-      
-      .cta-banner { padding: 40px 24px; border-radius: 24px; }
-      
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .contact-text h2 { font-size: 32px; }
     }
+
+    /* 手機版導覽：LOGO 上方，選單下方，不隱藏導航按鈕 */
+    @media (max-width: 600px) {
+      .header { padding: 12px 16px; }
+      .logo { width: 70px; height: 70px; border-radius: 20px; }
+      .nav-links { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; }
+      .nav-btn { padding: 8px 12px; white-space: nowrap; }
+      .hero { padding-top: 200px; }
+    }
+    /* 合作回饋：沿用全站原有卡片風格 */
+    .feedback-section { padding: 30px 0 90px; scroll-margin-top: 100px; }
+    .feedback-head { text-align: center; margin-bottom: 34px; }
+    .feedback-head span { display: block; font-size: 13px; font-weight: 800; color: var(--accent2); letter-spacing: 2px; margin-bottom: 8px; }
+    .feedback-head h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    .feedback-head p { font-size: 14px; color: var(--muted); }
+    .feedback-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .feedback-card { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.025); display: flex; flex-direction: column; min-height: 225px; }
+    .feedback-card .feedback-type { font-size: 13px; font-weight: 800; color: var(--accent2); margin-bottom: 14px; }
+    .feedback-card.sho-feedback .feedback-type { color: #173D37; }
+    .feedback-card blockquote { font-size: 15px; line-height: 1.9; margin: 0 0 20px; flex: 1; }
+    .feedback-card .feedback-credit { padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+    .feedback-demo-note { margin-top: 18px; color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 900px) { .feedback-grid { grid-template-columns: 1fr; gap: 16px; } .feedback-card { min-height: 0; } }
+    @media (max-width: 600px) { .feedback-head h2 { font-size: 28px; } .feedback-card { padding: 24px; } }
   </style>
 </head>
 
@@ -455,10 +437,10 @@
       </div>
     </div>
     <div class="nav-links">
-      <a href="#about" class="hide-mobile">關於我</a>
-      <a href="#work" class="hide-mobile">作品展示</a>
-      <a href="#pricing" class="hide-mobile">設計報價</a>
-      <a href="#contact" class="nav-btn">聯絡我</a>
+      <a href="#about">關於我們</a>
+      <a href="works.html">作品展示</a>
+      <a href="#pricing">服務報價</a>
+      <a href="#contact" class="nav-btn">聯絡我們</a>
     </div>
   </header>
 
@@ -471,22 +453,24 @@
     <!-- 中間的文字依舊乖乖待在 1200px 的安全閱讀範圍內 -->
     <div class="container">
       <div class="hero-content">
-        <h2>清晰視覺 <span class="x">✕</span> 舒心合作，讓你的品牌自然發光。</h2>
-        <p>我提供電商設計、平面設計與短影片剪輯。風格偏奶油系、乾淨好讀、重點明確，為你濾除雜訊，梳理出最純粹的品牌樣貌。</p>
+        <h2>專業分工 <span class="x">✕</span> 細心合作，讓每一份想法穩穩成形。</h2>
+        <p>Wee~Haru 微春工作室提供視覺與電商設計、平面設計、短影片剪輯、太陽能光電申請圖說，以及遊戲與漫畫等娛樂文本翻譯及校稿，依照不同專業與需求細心完成每份委託。</p>
         
-        <div class="tags">
-          <span class="tag">電商主副圖</span>
-          <span class="tag green">Banner / 一頁式</span>
-          <span class="tag">社群貼文 / 限動</span>
-          <span class="tag green">海報 / DM / 菜單</span>
-          <span class="tag">短影片剪輯</span>
-        </div>
+
+<div class="tags">
+  <span class="tag">電商視覺 / 社群設計</span>
+  <span class="tag green">LOGO / 平面設計</span>
+  <span class="tag">圖片編修 / 商品上架</span>
+  <span class="tag green">短影片剪輯</span>
+  <span class="tag">太陽能光電圖說</span>
+  <span class="tag green">娛樂文本翻譯 / 校稿</span>
+</div>
       </div>
     </div>
   </section>
 
   <div class="container">
-    <!-- 關於我 (About Me) 區塊 -->
+    <!-- 關於我們 (About Us) 區塊 -->
     <section class="about-section" id="about">
       <div class="about-header reveal">
         <span>Brand Story</span>
@@ -496,146 +480,241 @@
       <div class="about-quote reveal">
         <p>好的設計，就像春日微風，溫柔地整理資訊，也讓品牌的故事被好好看見。</p>
         <p>Wee~Haru 專注於乾淨的視覺與清晰的排版結構，透過簡潔而有節奏的畫面語言，為品牌打造舒適且有價值的閱讀體驗。</p>
+        <p>由兩位不同專業領域的夥伴共同組成，結合視覺設計、工程圖說與娛樂文本翻譯等專業，重視理解需求、細節與合作品質。</p>
       </div>
 
+      <!-- 團隊介紹：保留原有 founder-card 排版，兩位分別使用自己的插畫 -->
       <div class="founder-card reveal">
         <div class="founder-photo">
-          <!-- 💡 形象照已經更新為 S__167886852.jpg -->
-          <img src="S__167886852.jpg" alt="Wee~Haru 創辦人照片" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'display:flex; height:100%; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-align:center; padding:20px;\'>請在此處放入<br>S__167886852.jpg</div>';">
+          <!-- Pipi 形象插畫：請將 PIPI.jpg 與 index.html 放在同一資料夾 -->
+          <img src="PIPI.jpg" alt="Pipi 插畫形象" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <div class="photo-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i><span>Pipi 插畫待補</span></div>
         </div>
         <div class="founder-info">
-          <span class="subtitle">Meet The Designer</span>
-          <h3>吳品萱</h3>
+          <span class="subtitle">Meet The Team</span>
+          <h3>Pipi</h3>
           <div class="role">視覺設計｜電商頁面設計｜內容整合</div>
-          
-          <p>目前以個人接案為主，主要處理視覺設計、電商頁面、內容整合與短影音剪輯相關內容。</p>
+
+          <p>主要負責視覺設計、電商頁面、社群視覺及內容整理，透過清楚的資訊配置與舒適的排版，協助品牌傳達特色。</p>
           <p>在合作過程中，會依據品牌調性與業主需求調整畫面方向，並於需要時協助整理風格與版面，讓整體呈現更清楚一致。</p>
           <p>過去累積多項實務案件，因部分合作內容涉及保密，網站以可公開作品為主，僅少部分作品以模糊方式呈現。</p>
           <p>希望透過清楚的畫面與整理過的資訊，協助品牌更自然地傳達內容，也讓使用者更容易理解重點。</p>
-          
+
           <div style="margin-top: 30px;">
-             <a href="#contact" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">與我聊聊合作</a>
+            <a href="https://line.me/ti/p/gEnseE7eS5" target="_blank" rel="noopener noreferrer" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">與 Pipi 聊聊合作</a>
           </div>
         </div>
       </div>
 
-      <!-- 新增：合作經驗區塊 -->
-      <div class="exp-section reveal">
-        <div class="exp-title">
-          合作經驗 <span>Project Experience</span>
+      <div class="founder-card reveal sho-card">
+        <div class="founder-photo">
+          <!-- Sho 形象插畫：請將 SHO.jpg 與 index.html 放在同一資料夾 -->
+          <img src="SHO.jpg" alt="Sho 插畫形象" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <div class="photo-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i><span>Sho 插畫待補</span></div>
         </div>
-        <div class="exp-grid">
-          <div class="exp-item">
-            <h4>電商與內容整合 <span>E-commerce & Content</span></h4>
-            <p>商品上架、視覺整理、社群內容製作與網站內容管理。</p>
+        <div class="founder-info">
+          <span class="subtitle">Meet The Team</span>
+          <h3>Sho</h3>
+          <div class="role">太陽能光電圖說｜娛樂文本翻譯｜文字校稿</div>
+
+          <p>主要負責太陽能光電申請相關圖說製作，以及遊戲、漫畫等娛樂文本的中日英翻譯與校稿，依照不同案件需求提供專業服務。</p>
+          <p>在工程圖說方面，重視資訊的清晰度、正確性與完整性，依據台電及政府機關的申請需求製作相關圖說，並細心確認各項圖面細節。</p>
+          <p>在文字翻譯方面，具備中文與日文雙母語背景，熟悉不同語言的表達習慣與文化差異。除了準確傳達原文語意，也注重作品世界觀、角色個性與對話語氣，讓譯文保留原作風格，同時自然流暢。</p>
+          <p>無論是嚴謹的工程圖說，或講求語感的文字創作，都以細心與準確為原則，讓每一份成果符合實際需求。</p>
+
+          <div style="margin-top: 30px;">
+            <a href="https://line.me/ti/p/YEyoL4dP6r" target="_blank" rel="noopener noreferrer" class="btn-outline">與 Sho 聊聊合作</a>
           </div>
-          <div class="exp-item">
-            <h4>平面宣傳設計 <span>Print Design</span></h4>
-            <p>旅遊海報繪製、形象 DM 設計與車用宣傳單設計。</p>
-          </div>
-          <div class="exp-item">
-            <h4>品牌應用設計 <span>Brand Applications</span></h4>
-            <p>名片設計與版面編排。</p>
-          </div>
         </div>
       </div>
 
-    </section>
 
-    <!-- 雜誌風交錯作品區 -->
-    <section class="section" id="work">
-      <div class="section-header reveal">
-        <h2>Selected Works</h2>
-        <p>實際商業專案展示</p>
-      </div>
+<!-- 合作經驗區塊 -->
+<div class="exp-section reveal">
+  <div class="exp-title">
+    合作經驗 <span>Project Experience</span>
+  </div>
 
-      <div class="case-row reveal">
-        <div class="case-image-wrapper">
-          <div class="badge-protect"><i class="fa-solid fa-eye-slash" style="margin-right:6px;"></i>局部資訊保護</div>
-          <div class="case-image" style="background-image: url('case-lanna.jpg');"></div>
-        </div>
-        <div class="case-info">
-          <h3>一頁式商品<br>廣告視覺 (1)</h3>
-          <p>透過大量的呼吸留白與精準的版面配置，有效降低視覺疲勞，讓商品賣點與優勢在流覽過程中清晰呈現。</p>
-          <button class="btn-outline" data-open="modal-lanna">
-            <i class="fa-solid fa-expand"></i> 展開排版長圖
-          </button>
-        </div>
-      </div>
+  <div class="exp-grid">
 
-      <div class="case-row reveal">
-        <div class="case-image-wrapper">
-          <div class="badge-protect"><i class="fa-solid fa-eye-slash" style="margin-right:6px;"></i>局部資訊保護</div>
-          <div class="case-image" style="background-image: url('case-incense.jpg');"></div>
-        </div>
-        <div class="case-info">
-          <h3>情境氛圍導向<br>一頁式視覺 (2)</h3>
-          <p>以情境氛圍營造為主軸，結合乾淨的字體層級規劃，讓視覺自然聚焦，確保大量資訊依然好讀不雜亂。</p>
-          <button class="btn-outline" data-open="modal-incense">
-            <i class="fa-solid fa-expand"></i> 展開排版長圖
-          </button>
-        </div>
-      </div>
+    <!-- 電商與內容整合 -->
+    <div class="exp-item">
+      <h4>電商與內容整合
+        <span>E-commerce & Content</span>
+      </h4>
+      <p>商品資訊與視覺素材整理、社群內容製作及網站內容管理。</p>
+    </div>
 
-      <div class="case-row reveal">
-        <div class="case-image-wrapper">
-          <!-- 💡 品牌視覺重塑專案的封面已經更新為 品牌重素再造封面.jpg -->
-          <div class="case-image" style="background-image: url('品牌重素再造封面.jpg');"></div>
-        </div>
-        <div class="case-info">
-          <h3>品牌視覺<br>重塑再造專案</h3>
-          <p>實際參與的商業品牌再造計畫。從核心理念萃取、LOGO 重新設計，到整體視覺調性定調，完整建立品牌識別系統。</p>
-          <a href="https://www.behance.net/gallery/242228703/LOGO" target="_blank" rel="noopener" class="btn-outline">
-            <i class="fa-brands fa-behance"></i> 前往 Behance 觀看
-          </a>
-        </div>
-      </div>
+    <!-- 平面宣傳設計 -->
+    <div class="exp-item">
+      <h4>平面宣傳設計
+        <span>Print Design</span>
+      </h4>
+      <p>旅遊海報、形象 DM 與車用宣傳單等平面素材設計。</p>
+    </div>
 
-      <div class="cta-banner reveal">
-        <h3>探索更多設計風格與歷年專案</h3>
-        <p style="margin-bottom: 24px; color: var(--muted);">收錄在校競賽優化、個人創作、其他實際案件與詳細About Me</p>
-        <a href="https://www.behance.net/gallery/241846107/Portfolio-2025" target="_blank" rel="noopener" class="nav-btn" style="padding: 16px 32px; font-size: 16px;">
-          <i class="fa-solid fa-briefcase" style="margin-right:8px;"></i> 查看 2025 完整作品集
-        </a>
-      </div>
+    <!-- 品牌應用設計 -->
+    <div class="exp-item">
+      <h4>品牌應用設計
+        <span>Brand Applications</span>
+      </h4>
+      <p>名片與品牌應用版面設計，重視視覺協調與整體一致性。</p>
+    </div>
+
+    <!-- 品牌社群經營 -->
+    <div class="exp-item">
+      <h4>品牌社群經營／平面美編
+        <span>Social Media & Graphic Design</span>
+      </h4>
+      <p>負責品牌社群圖文、宣傳素材製作與日常內容經營。</p>
+    </div>
+
+    <!-- 影音剪輯與平台管理 -->
+    <div class="exp-item">
+      <h4>影音剪輯／社群平台維護管理
+        <span>Video Editing & Social Media Management</span>
+      </h4>
+      <p>曾負責影音素材剪輯、平台內容更新與日常維護。</p>
+    </div>
+
+    <!-- 電商廣告與商品上架 -->
+    <div class="exp-item">
+      <h4>電商一頁式廣告／商品上架
+        <span>E-commerce Design & Product Listing</span>
+      </h4>
+      <p>商品介紹長圖製作、商品資料整理及平台建檔上架。</p>
+    </div>
+
+    <!-- 太陽能光電圖說 -->
+    <div class="exp-item">
+      <h4>太陽能光電圖說設計工程師
+        <span>Solar PV Engineering Drawings</span>
+      </h4>
+      <p>負責台電及政府機關申請相關圖說製作與圖面細節確認。</p>
+    </div>
+
+    <!-- 中日英翻譯與校稿 -->
+    <div class="exp-item">
+      <h4>中日英翻譯／校稿
+        <span>Translation & Proofreading</span>
+      </h4>
+      <p>以遊戲、漫畫等娛樂文本為主，重視語意準確、角色語氣與原作風格。</p>
+    </div>
+
+  </div>
+</div>
+
     </section>
 
     <!-- 價目表 -->
     <section class="section reveal" id="pricing">
       <div class="pricing-section">
         <div class="section-header">
-          <h2>Design Price List</h2>
-          <p>透明清楚的報價，實際費用依專案複雜度調整</p>
+          <h2>Service Price List</h2>
+          <p>各平台統一報價；以下為起始價格，實際費用依案件內容與複雜度評估</p>
         </div>
 
-        <div class="price-category">電商設計</div>
-        <div class="price-row"><div class="p-title">FB/IG 社群貼文</div><div class="p-desc">不含主題發想，多圖 +$100 / 張</div><div class="p-amount">$500 / 篇 ( 5 張 )</div></div>
-        <div class="price-row"><div class="p-title">FB/IG 社群限動</div><div class="p-desc">不含主題發想</div><div class="p-amount">$300 ↑ / 則</div></div>
-        <div class="price-row"><div class="p-title">商品主圖</div><div class="p-desc">需提供素材</div><div class="p-amount">$500 / 張</div></div>
-        <div class="price-row"><div class="p-title">商品副圖</div><div class="p-desc">需提供素材</div><div class="p-amount">$250 / 張</div></div>
-        <div class="price-row"><div class="p-title">BANNER 設計</div><div class="p-desc">依尺寸/複雜度調整</div><div class="p-amount">$800 ↑ / 張</div></div>
-        <div class="price-row"><div class="p-title">一頁式 ( 商品介紹 )</div><div class="p-desc">依內容量與區塊數調整</div><div class="p-amount">$2000 ↑ / 張</div></div>
+        <!-- Pipi：社群與電商視覺 -->
+        <div class="price-category">社群設計</div>
+        <div class="price-row"><div class="p-title">FB / IG 社群貼文</div><div class="p-desc">單篇起價；同主題最多 5 張，追加圖片 +$100／張；不含主題發想與文案撰寫</div><div class="p-amount">$500 起／篇</div></div>
+        <div class="price-row"><div class="p-title">FB / IG 社群限動</div><div class="p-desc">依資訊量與設計需求調整；若需主題發想另行報價</div><div class="p-amount">$300 起／則</div></div>
+        <div class="price-row"><div class="p-title">YouTube 縮圖</div><div class="p-desc">依提供的標題、圖片及內容製作</div><div class="p-amount">$400 起／張</div></div>
 
-        <div class="price-category" style="margin-top: 60px;">平面設計</div>
-        <div class="price-row"><div class="p-title">名片設計</div><div class="p-desc">依版面需求調整</div><div class="p-amount">$1000 / 面</div></div>
-        <div class="price-row"><div class="p-title">A3 海報設計</div><div class="p-desc">依資訊量調整</div><div class="p-amount">$1000 ↑ / 張</div></div>
-        <div class="price-row"><div class="p-title">A4 DM / 傳單設計</div><div class="p-desc">依資訊量調整</div><div class="p-amount">$1000 ↑ / 張</div></div>
-        <div class="price-row"><div class="p-title">菜單設計</div><div class="p-desc">依頁數/品項數調整</div><div class="p-amount">$1000 ↑ / 張</div></div>
+        <div class="price-category" style="margin-top: 60px;">電商圖片與內容</div>
+        <div class="price-row"><div class="p-title">商品主圖</div><div class="p-desc">需提供素材，依實際內容製作</div><div class="p-amount">$500／張</div></div>
+        <div class="price-row"><div class="p-title">商品副圖</div><div class="p-desc">需提供素材，依實際內容製作</div><div class="p-amount">$250／張</div></div>
+        <div class="price-row"><div class="p-title">Banner 設計</div><div class="p-desc">依尺寸與複雜度調整</div><div class="p-amount">$800 起／張</div></div>
+        <div class="price-row"><div class="p-title">一頁式商品介紹</div><div class="p-desc">依內容量、區塊數與設計需求調整</div><div class="p-amount">$2,000 起／張</div></div>
+        <div class="price-row"><div class="p-title">簡易圖片編修</div><div class="p-desc">僅針對既有圖片「改字」：文字替換、簡繁轉換、商品名稱／價格／規格更新；不含重新排版、重新設計或整張重製</div><div class="p-amount">$200 起／張</div></div>
+        <div class="price-row"><div class="p-title">商品資料建檔／上架</div><div class="p-desc">商品資料整理、平台建檔、上架及圖片搜尋等需求，依數量與平台評估</div><div class="p-amount">另行報價</div></div>
 
+        <div class="price-category" style="margin-top: 60px;">平面與品牌設計</div>
+        <div class="price-row"><div class="p-title">LOGO 標誌設計</div><div class="p-desc">提供 AI／SVG／PNG／JPG、黑白與反白版本及簡易使用規範</div><div class="p-amount">$1,500 起／款</div></div>
+        <div class="price-row"><div class="p-title">名片設計</div><div class="p-desc">依版面需求調整；提供設計與印刷用完稿檔</div><div class="p-amount">$800 起／款</div></div>
+        <div class="price-row"><div class="p-title">A3 海報設計</div><div class="p-desc">依資訊量調整；提供設計與印刷用完稿檔</div><div class="p-amount">$1,000 起／張</div></div>
+        <div class="price-row"><div class="p-title">A4 DM／傳單設計</div><div class="p-desc">依資訊量調整；提供設計與印刷用完稿檔</div><div class="p-amount">$1,000 起／張</div></div>
+        <div class="price-row"><div class="p-title">菜單設計</div><div class="p-desc">依頁數與品項數調整；提供設計與印刷用完稿檔</div><div class="p-amount">$1,200 起／頁</div></div>
+
+        <!-- Pipi：短影片剪輯（官網提供，Tasker 不上架） -->
         <div class="price-category" style="margin-top: 60px;">短影片剪輯</div>
-        <div class="price-row"><div class="p-title">短影片 (60s 內)</div><div class="p-desc">需提供素材</div><div class="p-amount">$500 ↑ / 支</div></div>
-        <div class="price-row"><div class="p-title">短影片 (60s 以上)</div><div class="p-desc">需提供素材</div><div class="p-amount">$1000 ↑ / 支</div></div>
+        <div class="price-row"><div class="p-title">短影片（60 秒內）</div><div class="p-desc">需提供影片素材，依剪輯內容與需求評估</div><div class="p-amount">$500 起／支</div></div>
+        <div class="price-row"><div class="p-title">短影片（超過 60 秒）</div><div class="p-desc">需提供影片素材，依影片長度及剪輯複雜度評估</div><div class="p-amount">$1,000 起／支</div></div>
+
+        <!-- Sho：只接申請用圖說，不承接竣工圖、用印或簽證 -->
+        <div class="price-category" style="margin-top: 60px; color:#173D37; border-bottom-color:#DFC6A3;">太陽能光電申請圖說</div>
+        <div class="price-row"><div class="p-title">台電五大圖說＋計算式</div><div class="p-desc">限 499kW 以下申請案件；不含簽證與承裝業用印</div><div class="p-amount">$10,000／案</div></div>
+        <div class="price-row"><div class="p-title">免雜項＋同意備案圖說</div><div class="p-desc">申請相關圖說製作；不含簽證與承裝業用印</div><div class="p-amount">$10,000／案</div></div>
+        <div class="price-row"><div class="p-title">全套申請圖說</div><div class="p-desc">台電五大圖說＋計算式、免雜項及同意備案三者合計；依案件條件評估</div><div class="p-amount">$18,000／案</div></div>
+
+        <div class="price-category" style="margin-top: 60px; color:#173D37; border-bottom-color:#DFC6A3;">娛樂文本翻譯與校稿</div>
+        <div class="price-row"><div class="p-title">英文 → 中文／日文</div><div class="p-desc">依原文英文單字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／英文單字</div></div>
+        <div class="price-row"><div class="p-title">中文 → 英文／日文</div><div class="p-desc">依原文中文字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／中文字</div></div>
+        <div class="price-row"><div class="p-title">日文 → 中文／英文</div><div class="p-desc">依原文日文字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／日文字</div></div>
+        <div class="price-row"><div class="p-title">娛樂文本校稿（含修改）</div><div class="p-desc">依原文中文字／日文字，或原文英文單字數計費</div><div class="p-amount">$3／原文字或英文單字</div></div>
 
         <div class="note-box">
-          <h4>備註</h4>
+          <h4>服務備註</h4>
           <ul>
-            <li>皆包含 1 次大改 + 3 次微調 ( 超過 $100 / 張 )。</li>
-            <li>以上報價不含印刷。</li>
-            <li>以上為參考報價，實際費用依專案複雜度與需求調整。</li>
-            <li>交付格式：JPG / PNG / PDF。</li>
+            <li><b>設計服務：</b>一般含 1 次大改與 3 次微調；超出次數依修改幅度另外計費，基本 $100／次起。細節以個別報價為準。</li>
+            <li><b>設計交付：</b>社群與電商圖片提供 JPG／PNG；平面設計提供印刷用 PDF／JPG／PNG；LOGO 標誌設計提供 AI 可編輯原始檔、JPG 及透明背景 PNG。</li>
+            <li><b>印刷：</b>僅提供設計及印刷檔製作（含必要時的 CMYK、出血與裁切標示），不承接實體印刷、代印或印刷廠對接。</li>
+            <li><b>工程圖說：</b>僅承接台電及政府機關申請相關圖說設計，不包含竣工圖、簽證、承裝業用印或代辦送件。</li>
+            <li><b>翻譯／校稿：</b>僅承接遊戲、漫畫等娛樂性文本；不承接醫療、法律等專業文件。校稿與翻譯均按原文計費。</li>
+            <li>以上為新台幣參考起價，所有平台採相同報價標準，正式金額以案件需求確認後提供的報價為準。</li>
           </ul>
         </div>
       </div>
+    </section>
+
+    <!-- 合作回饋：三張獨立卡片，聲明獨立於卡片外 -->
+    <section class="feedback-section" id="feedback">
+      <div class="feedback-head reveal">
+        <span>CLIENT FEEDBACK</span>
+        <h2>合作回饋</h2>
+        <p>每一份託付，都值得用心回應。</p>
+      </div>
+      <div class="feedback-grid">
+        <!-- 第一格：Pipi 網站與社群內容整合 -->
+        <article class="feedback-card reveal">
+          <div class="feedback-type" style="padding-bottom:18px; border-bottom:1px solid var(--line);">
+            <div>網站與社群內容整合服務</div>
+            <div style="font-size:13px; font-weight:400; color:var(--muted); line-height:1.8; margin-top:10px;">
+              合作項目：官網內容維護、文案更新、社群貼文發布、影音剪輯、封面圖片設計
+            </div>
+          </div>
+          <blockquote>「感謝可愛的Pipi各方協助！下次需要設計的時候再找你合作。」</blockquote>
+          <div class="feedback-credit">合作客戶｜高*瑩</div>
+        </article>
+
+        <!-- 第二格：Sho 太陽能光電圖說 -->
+        <article class="feedback-card sho-feedback reveal">
+          <div class="feedback-type" style="padding-bottom:18px; border-bottom:1px solid var(--line);">
+            <div>太陽能光電圖說服務</div>
+            <div style="font-size:13px; font-weight:400; color:var(--muted); line-height:1.8; margin-top:10px;">
+              合作項目：太陽能光電申請圖說繪製、案件問題檢視與溝通協助
+            </div>
+          </div>
+          <blockquote>「Sho真的非常專業！不只是協助完成圖說，還會主動發現案件中的問題，並提前提醒我們需要注意的地方，讓後續作業更加順利，也減少了許多反覆溝通與修改的時間。真的很感謝能遇到 SHO，合作起來讓人很放心！」</blockquote>
+          <div class="feedback-credit">合作客戶｜葉*祥</div>
+        </article>
+
+        <!-- 第三格：Sho 翻譯長期合作 -->
+        <article class="feedback-card sho-feedback reveal">
+          <div class="feedback-type" style="padding-bottom:18px; border-bottom:1px solid var(--line);">
+            <div>翻譯服務｜長期合作客戶</div>
+            <div style="font-size:13px; font-weight:400; color:var(--muted); line-height:1.8; margin-top:10px;">
+              曾多次委託進行翻譯工作，持續建立良好的合作關係。
+            </div>
+          </div>
+          <blockquote>「之前就有找Sho合作過翻譯，每次的成果都很符合期待！這次也一樣順利又愉快，有翻譯需求還是會想繼續合作。合作愉快Sho，感謝你！」</blockquote>
+          <div class="feedback-credit">合作客戶｜王*</div>
+        </article>
+      </div>
+
+      <!-- 合作回饋公開聲明：不放進任何一張卡片 -->
+      <p style="text-align:center; font-size:12px; color:#AAA6A2; margin-top:24px; line-height:1.8;">
+        ＊以上合作回饋均經客戶同意公開，部分姓名及案件資訊已適度隱去，以保障客戶隱私。
+      </p>
     </section>
 
     <!-- 常見問題 FAQ -->
@@ -647,20 +726,34 @@
         </div>
         <div class="faq-item">
           <details>
-            <summary>可以做不同平台的尺寸嗎？</summary>
+            <summary>可以做不同購物平台的尺寸嗎？</summary>
             <p>沒問題！請告知您使用的平台（如 1shop / 蝦皮 / IG）或需要的具體尺寸即可。</p>
           </details>
         </div>
         <div class="faq-item">
           <details>
-            <summary>會提供可編輯原始檔嗎？</summary>
-            <p>一般交付為 PNG/JPG 檔。若有原始檔需求可於報價時加購（依設計工具而定）。</p>
+            <summary>各項服務會提供可編輯原始檔嗎？</summary>
+            <p>社群與電商圖片提供 JPG／PNG；平面設計提供印刷用 PDF／JPG／PNG；LOGO 標誌設計提供 AI 可編輯原始檔、JPG 及透明背景 PNG。其他可編輯原始檔需求可於報價時另行討論。</p>
+            <p>工程圖說依案件需求提供相關圖說檔案；娛樂文本翻譯與校稿則依雙方約定提供文字檔案。相關交付格式及可編輯原始檔需求，皆可於合作前確認。</p>
+
           </details>
         </div>
         <div class="faq-item">
           <details>
             <summary>修改次數如何計算？</summary>
-            <p>報價皆包含 1 次大改與 3 次微調。若超過次數，將視修改幅度酌收工本費（約 $100 / 張）。</p>
+            <p>設計類服務一般包含 1 次大改與 3 次微調，超過次數依修改幅度另行計費（基本 $100／次起）。工程圖說、翻譯及校稿依個別案件約定修改範圍。</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>簡易圖片編修包含哪些內容？</summary>
+            <p>主要針對客戶提供的既有圖片進行文字替換、簡繁轉換，以及商品名稱、價格、規格等資訊更新；不包含重新排版、重新設計或整張圖片重製。</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>有提供實體印刷、工程送件或簽證服務嗎？</summary>
+            <p>沒有。平面設計僅提供設計與印刷用完稿檔，不提供實體印刷、代印或印刷廠對接。工程僅提供申請相關圖說設計，不提供代辦送件、簽證、承裝業用印或竣工圖。</p>
           </details>
         </div>
       </div>
@@ -672,8 +765,8 @@
         
         <!-- 左欄：主要文字與服務流程 -->
         <div class="contact-text">
-          <h2>Let's create<br>something beautiful.</h2>
-          <p>你可以直接複製<span class="desktop-text">右側</span><span class="mobile-text">下方</span>的私訊格式，<br>透過下方任何一個管道傳送給我，我會盡快為您評估排期與報價。</p>
+          <h2>Let's make<br>ideas happen.</h2>
+          <p>你可以參考<span class="desktop-text">右側</span><span class="mobile-text">下方</span>的私訊格式，<br>點選上方 Pipi 或 Sho 介紹中的「聊聊合作」即可直接透過 LINE 聯繫，也可以使用 Instagram 或 Email 詢問。</p>
           
           <!-- 新增：服務流程 -->
           <div class="service-process">
@@ -696,66 +789,40 @@
               <div class="s-icon"><i class="fa-brands fa-instagram"></i></div>
               <div class="s-info"><h4>Instagram</h4><p>@51haru.studio</p></div>
             </a>
-            <a href="https://line.me/ti/p/gEnseE7eS5" target="_blank" class="s-card line">
-              <div class="s-icon"><i class="fa-brands fa-line"></i></div>
-              <div class="s-info"><h4>LINE </h4><p>點擊加好友直接討論</p></div>
-            </a>
-            <a href="mailto:hsuan.studio25@gmail.com" class="s-card">
+            <a href="mailto:weeharu.studio@gmail.com" class="s-card">
               <div class="s-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="s-info"><h4>Email 信箱</h4><p>hsuan.studio25@gmail.com</p></div>
+              <div class="s-info"><h4>Email 信箱</h4><p>weeharu.studio@gmail.com</p></div>
             </a>
           </div>
 
           <div class="copy-box">
             <b>【接案需求】</b><br><br>
-            1) 品項：<br><br>
-            2) 尺寸 / 平台：<br><br>
-            3) 內容 / 文案是否提供：<br><br>
-            4) 素材是否提供 (照片/Logo/產品圖)：<br><br>
-            5) 風格參考 (連結/圖片)：<br><br>
+            1) 服務項目 (設計／工程圖說／翻譯校稿)：<br><br>
+            2) 委託內容與需求說明：<br><br>
+            3) 尺寸、平台或案件類型 (如適用)：<br><br>
+            4) 已有素材／原文／圖面資料：<br><br>
+            5) 參考範例或其他需求：<br><br>
             6) 希望交付日期：
           </div>
         </div>
       </div>
       
-      <div class="copyright">
-        © <span id="y">2025</span> Wee~Haru 微春工作室. All rights reserved.
-      </div>
-    </section>
+      <footer class="copyright">
+  <p>
+    © 2025–<span id="copyright-year"></span>
+    Wee~Haru Studio. All Rights Reserved.
+  </p>
+  <p>
+    Wee~Haru 微春工作室｜本站內容及設計作品版權所有，
+    未經授權請勿轉載或使用。
+  </p>
+</footer>
 
-  </div>
+<script>
+  document.getElementById("copyright-year").textContent =
+    new Date().getFullYear();
+</script>
 
-  <!-- MODALS -->
-  <div class="modal" id="modal-lanna" aria-hidden="true">
-    <div class="modalPanel">
-      <div class="modalTop">
-        <b>案例展示｜一頁式廣告視覺</b>
-        <button class="closeBtn" data-close>&times;</button>
-      </div>
-      <div class="modalBody">
-        <div class="caseImgWrap">
-          <img src="case-lanna.jpg" alt="展示" />
-          <div class="wm"><span>Design by Wee~Haru｜排版展示用</span></div>
-        </div>
-        <p class="hint" style="margin-top:15px; color: #888; font-size: 14px; line-height: 1.6;">＊本專案已實際上架。為尊重業主合約流程，目前展示版本已將部分品牌與商業資訊進行模糊保護。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-incense" aria-hidden="true">
-    <div class="modalPanel">
-      <div class="modalTop">
-        <b>案例展示｜一頁式廣告視覺</b>
-        <button class="closeBtn" data-close>&times;</button>
-      </div>
-      <div class="modalBody">
-        <div class="caseImgWrap">
-          <img src="case-incense.jpg" alt="展示" />
-          <div class="wm"><span>Design by Wee~Haru｜排版展示用</span></div>
-        </div>
-        <p class="hint" style="margin-top:15px; color: #888; font-size: 14px; line-height: 1.6;">＊本專案已實際上架。為尊重業主合約流程，目前展示版本已將部分品牌與商業資訊進行模糊保護。</p>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -787,29 +854,18 @@
         img2.onload = () => { if(fallbackText) fallbackText.style.display = 'none'; };
     };
 
-    // Modal 功能
-    document.querySelectorAll('[data-open]').forEach(btn=>{
-      btn.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const id = btn.getAttribute('data-open');
-        const modal = document.getElementById(id);
-        if(modal){
-          modal.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        }
-      });
+    // 從作品頁返回首頁錨點時，避開固定導覽列
+    window.addEventListener('load', () => {
+      const hash = window.location.hash;
+      if (!hash || !/^#[A-Za-z][\w-]*$/.test(hash)) return;
+      const section = document.querySelector(hash);
+      const nav = document.querySelector('.header');
+      if (section) {
+        const offset = (nav ? nav.getBoundingClientRect().height : 0) + 18;
+        window.scrollTo({top: Math.max(0, section.getBoundingClientRect().top + window.scrollY - offset), behavior: 'instant'});
+      }
     });
 
-    document.querySelectorAll('[data-close], .modal').forEach(el=>{
-      el.addEventListener('click', (e)=>{
-        if(e.target === el || el.hasAttribute('data-close') || el.classList.contains('closeBtn')) {
-            const modal = el.closest('.modal') || el;
-            modal.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-      });
-    });
-    
     // 平滑滾動
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -819,7 +875,7 @@
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          const headerOffset = 100;
+          const headerOffset = (document.querySelector('.header')?.getBoundingClientRect().height || 100) + 18;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
