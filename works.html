@@ -547,6 +547,64 @@
       </div>
     </section>
 
+<!-- =====================================
+     Sho｜太陽能光電申請圖說作品展示
+===================================== -->
+<section class="section" id="sho-works">
+
+  <div class="section-header reveal">
+    <h2 style="color:#173D37;">
+      Solar PV Drawings
+    </h2>
+    <p>Sho｜太陽能光電申請圖說作品展示</p>
+  </div>
+
+  <!-- 太陽能圖說作品 01 -->
+  <div class="case-row reveal">
+
+    <div class="case-image-wrapper">
+
+      <div class="badge-protect">
+        <i class="fa-solid fa-eye-slash"
+           style="margin-right:6px;"></i>
+        局部資訊保護
+      </div>
+
+      <div class="case-image"
+           style="background-image:url('solar-case01.jpg');">
+      </div>
+
+    </div>
+
+    <div class="case-info">
+
+      <h3>
+        太陽能光電<br>
+        申請圖說設計
+      </h3>
+
+      <p>
+        依據台電及政府機關申請需求，
+        進行太陽能光電相關圖說製作，
+        重視圖面資訊的清晰度、正確性與完整性，
+        並細心確認各項設計細節。
+      </p>
+
+      <button class="btn-outline"
+              data-open="modal-solar01"
+              style="border-color:#80988C; color:#173D37;">
+
+        <i class="fa-solid fa-expand"></i>
+        展開圖說作品
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
     <div class="works-footer-wrap">
       <div class="works-back"><a href="index.html" class="btn-outline">返回工作室首頁</a></div>
       <footer class="copyright">
@@ -593,14 +651,48 @@
           <div class="wm"><span>© Wee~Haru 微春工作室｜僅供作品展示</span></div>
         </div>
         <p class="hint" style="margin-top:15px; color: #888; font-size: 14px; line-height: 1.6;">＊本專案已實際上架。為尊重業主合約流程，目前展示版本已將部分品牌與商業資訊進行模糊保護。</p>
-      </div>
     </div>
   </div>
+</div>
 
-  <script>
-    // 滾動浮現動畫邏輯
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
+<!-- ↑ 這裡是 modal-incense 的結束 -->
+
+<!-- ★ 在這裡貼上 Sho 的太陽能圖說彈窗 ★ -->
+
+<!-- Sho｜太陽能光電圖說放大展示 -->
+<div class="modal" id="modal-solar01" aria-hidden="true">
+  <div class="modalPanel">
+
+    <div class="modalTop">
+      <b>案例展示｜太陽能光電申請圖說</b>
+      <button class="closeBtn" data-close aria-label="關閉視窗">
+        &times;
+      </button>
+    </div>
+
+    <div class="modalBody">
+      <div class="caseImgWrap">
+        <img src="solar-case01.jpg" alt="太陽能光電申請圖說作品">
+        <div class="wm">
+          <span>© Wee~Haru 微春工作室｜僅供作品展示</span>
+        </div>
+      </div>
+
+      <p class="hint"
+         style="margin-top:15px; color:#888; font-size:14px; line-height:1.6;">
+        ＊本作品僅供設計成果展示，
+        部分案件及申請資訊已進行隱藏處理。
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ★ Sho 彈窗新增到這裡結束 ★ -->
+
+<script>
+  // 滾動浮現動畫邏輯
+  function reveal() {      var reveals = document.querySelectorAll(".reveal");
       for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
