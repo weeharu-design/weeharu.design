@@ -423,6 +423,148 @@
     .feedback-demo-note { margin-top: 18px; color: var(--muted); font-size: 12px; text-align: center; }
     @media (max-width: 900px) { .feedback-grid { grid-template-columns: 1fr; gap: 16px; } .feedback-card { min-height: 0; } }
     @media (max-width: 600px) { .feedback-head h2 { font-size: 28px; } .feedback-card { padding: 24px; } }
+
+/* ===============================
+   Wee~Haru 品牌服務跑馬燈
+================================ */
+
+.service-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #173D37;
+  padding: 18px 0;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 20s linear infinite;
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 32px;
+  padding-right: 32px;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #F6F3EA;
+}
+
+.marquee-star {
+  color: #DFC6A3;
+  font-size: 15px;
+}
+
+/* 由右往左無縫移動 */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+/* 手機版 */
+@media (max-width: 600px) {
+  .service-marquee {
+    padding: 14px 0;
+  }
+
+  .marquee-group {
+    gap: 22px;
+    padding-right: 22px;
+  }
+
+  .marquee-item {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .marquee-star {
+    font-size: 12px;
+  }
+}
+
+
+
+/* ===============================
+   Wee~Haru 英文品牌跑馬燈
+================================ */
+
+.brand-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #F6EBE5;
+  padding: 16px 0;
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: brandMarqueeMove 28s linear infinite reverse;
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.brand-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+  justify-content: flex-start;
+}
+
+.brand-marquee-phrase {
+  white-space: nowrap;
+  color: #A6735A;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.brand-marquee-phrase span {
+  color: #80988C;
+  margin: 0 20px;
+}
+
+@keyframes brandMarqueeMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+@media (max-width: 600px) {
+  .brand-marquee {
+    padding: 12px 0;
+  }
+
+  .brand-marquee-phrase {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .brand-marquee-phrase span {
+    margin: 0 12px;
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -468,6 +610,156 @@
       </div>
     </div>
   </section>
+
+<!-- ===============================
+     Wee~Haru 服務跑馬燈
+================================ -->
+<section class="service-marquee"
+         aria-label="工作室服務：視覺設計、影音剪輯、工程圖說、文字翻譯">
+
+  <div class="marquee-track" aria-hidden="true">
+
+    <!-- 第一組 -->
+    <div class="marquee-group">
+      <span class="marquee-item">視覺設計</span>
+      <span class="marquee-star">✦</span>
+      <span class="marquee-item">影音剪輯</span>
+      <span class="marquee-star">✳</span>
+      <span class="marquee-item">工程圖說</span>
+      <span class="marquee-star">✦</span>
+      <span class="marquee-item">文字翻譯</span>
+      <span class="marquee-star">✳</span>
+    </div>
+
+    <!-- 第二組：重複內容，實現無縫循環 -->
+    <div class="marquee-group">
+      <span class="marquee-item">視覺設計</span>
+      <span class="marquee-star">✦</span>
+      <span class="marquee-item">影音剪輯</span>
+      <span class="marquee-star">✳</span>
+      <span class="marquee-item">工程圖說</span>
+      <span class="marquee-star">✦</span>
+      <span class="marquee-item">文字翻譯</span>
+      <span class="marquee-star">✳</span>
+    </div>
+
+  </div>
+</section>
+<!-- 服務跑馬燈結束 -->
+
+<!-- ===============================
+     Wee~Haru 英文品牌跑馬燈
+================================ -->
+<section class="brand-marquee"
+         aria-label="Wee~Haru Studio 品牌理念">
+
+  <div class="brand-marquee-track" aria-hidden="true">
+
+    <!-- 第一組 -->
+    <div class="brand-marquee-group">
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+    </div>
+
+    <!-- 第二組：複製第一組內容，確保循環銜接 -->
+    <div class="brand-marquee-group">
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+      <div class="brand-marquee-phrase">
+        Design with Care <span>✦</span>
+        Wee~Haru Studio <span>✦</span>
+        Thoughtful Creativity <span>✦</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- 英文品牌跑馬燈結束 -->
+
+<!-- 讓兩條跑馬燈在電腦、手機及寬螢幕皆能無縫連續播放 -->
+<script>
+  (function () {
+    const configs = [
+      ['.service-marquee', '.marquee-track'],
+      ['.brand-marquee', '.brand-marquee-track']
+    ];
+
+    const items = configs.map(([sectionSelector, trackSelector]) => {
+      const section = document.querySelector(sectionSelector);
+      const track = section?.querySelector(trackSelector);
+      if (!section || !track || track.children.length !== 2) return null;
+      const first = track.children[0];
+      const second = track.children[1];
+      const initialMarkup = first.innerHTML;
+      return { section, track, first, second, initialMarkup };
+    }).filter(Boolean);
+
+    function adjustMarquees() {
+      items.forEach(({ section, track, first, second, initialMarkup }) => {
+        // 先停住位置，再重算每一半的實際長度，避免內容不足出現空白
+        track.style.animation = 'none';
+        first.innerHTML = initialMarkup;
+        let repetitions = 0;
+        while (first.scrollWidth < section.clientWidth + 60 && repetitions < 30) {
+          first.insertAdjacentHTML('beforeend', initialMarkup);
+          repetitions++;
+        }
+        second.innerHTML = first.innerHTML;
+        // 恢復 CSS 指定的速度與方向
+        track.style.animation = '';
+      });
+    }
+
+    adjustMarquees();
+    let resizeFrame = 0;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(adjustMarquees);
+    });
+  })();
+</script>
+
 
   <div class="container">
     <!-- 關於我們 (About Us) 區塊 -->
