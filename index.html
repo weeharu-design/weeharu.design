@@ -699,6 +699,34 @@
       .header-mascot { width: 38vw; right: 8px; }
       .header .brand-text h1 { font-size: 16px; }
     }
+  
+    /* ==========================================================
+       修正：滿版 GIF 頁首不得覆蓋下方主視覺
+       sticky 保留置頂導覽，但會占用自己的版面高度。
+       只修改頁首定位；不修改 GIF、SEO、服務或其他動畫。
+       ========================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+    }
+
+    /* 首頁長圖從頁首下緣才開始，避免被深色區擋住。 */
+    .hero {
+      min-height: clamp(520px, calc(100svh - 268px), 760px);
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    /* 這個寬度的頁首採雙排導覽，高度較小。 */
+    @media (min-width: 901px) and (max-width: 1400px) {
+      .hero { min-height: clamp(520px, calc(100svh - 205px), 720px); padding-top: 40px; }
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: 560px; padding-top: 48px; padding-bottom: 42px; }
+    }
+    @media (max-width: 600px) {
+      .hero { min-height: 535px; padding-top: 40px; padding-bottom: 36px; }
+    }
+
   </style>
 </head>
 
