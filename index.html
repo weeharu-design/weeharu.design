@@ -5,23 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- ================= 基本 SEO 設定 ================= -->
-  <title>Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯</title>
-  <meta name="description" content="Wee~Haru 微春工作室由 Pipi 與 Sho 共同提供視覺設計、電商圖片、平面設計、太陽能光電申請圖說，以及遊戲與漫畫等娛樂文本翻譯及校稿服務。" />
-  <meta name="keywords" content="Wee~Haru, 微春工作室, Pipi, Sho, 視覺設計, 電商設計, 平面設計, LOGO設計, 社群圖片, 圖片編修, 太陽能光電申請圖說, 遊戲翻譯, 漫畫翻譯, 中日英翻譯, 校稿" />
+  <title>Wee~Haru微春工作室｜視覺設計・工程圖說・翻譯校稿</title>
+  <meta name="description" content="Wee~Haru 微春工作室由 Pipi 與 Sho 共同經營，提供電商圖片、LOGO 與平面設計、社群視覺、短影片剪輯、太陽能光電申請圖說，以及中日英翻譯、校稿及文字修訂服務，涵蓋娛樂文本、企業官網與一般商業文件。" />
+  <meta name="keywords" content="Wee~Haru, 微春工作室, Pipi, Sho, 視覺設計, 電商設計, 平面設計, LOGO設計, 社群圖片, 圖片編修, 太陽能光電申請圖說, 遊戲翻譯, 漫畫翻譯, 企業官網翻譯, 商業文件翻譯, 中日英翻譯, 校稿" />
   <meta name="author" content="Wee~Haru 微春工作室" />
 
   <!-- ================= 社群分享 (Facebook / LINE / IG) Open Graph 設定 ================= -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯" />
-  <meta property="og:description" content="視覺設計、電商與平面設計、光電申請圖說，以及遊戲／漫畫翻譯與校稿。由 Pipi 與 Sho 依專業分工合作。" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="Wee~Haru微春工作室｜視覺設計・工程圖說・翻譯校稿" />
+  <meta property="og:description" content="Pipi × Sho 雙人工作室，提供視覺與電商設計、品牌與平面設計、太陽能光電申請圖說，以及企業、商業與娛樂文本的中日英翻譯及校稿服務。" />
   <meta property="og:url" content="https://weeharu-design.github.io/weeharu.design/" /> <!-- 若未來啟用自訂網域，記得同步更新 -->
   <meta property="og:site_name" content="Wee~Haru 微春工作室" />
   <meta property="og:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" /> <!-- 圖檔請放在網站根目錄，建議 1200x630 -->
 
+  <link rel="canonical" href="https://weeharu-design.github.io/weeharu.design/" />
+
   <!-- ================= Twitter 分享設定 ================= -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Wee~Haru Studio｜視覺設計・工程圖說・娛樂文本翻譯" />
-  <meta name="twitter:description" content="視覺設計、電商與平面設計、光電申請圖說，以及遊戲／漫畫翻譯與校稿。由 Pipi 與 Sho 依專業分工合作。" />
+  <meta name="twitter:title" content="Wee~Haru微春工作室｜視覺設計・工程圖說・翻譯校稿" />
+  <meta name="twitter:description" content="Pipi × Sho 雙人工作室，提供視覺與電商設計、品牌與平面設計、太陽能光電申請圖說，以及企業、商業與娛樂文本的中日英翻譯及校稿服務。" />
   <meta name="twitter:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" />
 
   <!-- ================= 網址圖標 (Favicon) 設定 ================= -->
@@ -239,6 +242,48 @@
     .sho-card .founder-info .role { color: #173D37; border-bottom-color: rgba(23,61,55,.15); }
     .sho-card .btn-outline { background: #DFC6A3; border-color: #DFC6A3; color: #173D37; }
     .sho-card .btn-outline:hover { background: #173D37; border-color: #173D37; color: #F6F3EA; }
+
+
+/* ===============================
+   Pipi 專屬配色｜奶茶粉棕色系
+   只影響 Pipi 人物介紹卡片
+================================ */
+
+/* Pipi 卡片背景 */
+.founder-card:not(.sho-card) {
+  background: #F6EBE5;
+}
+
+/* Pipi 人物照片區底色 */
+.founder-card:not(.sho-card) .founder-photo {
+  background-color: #EBD6C9;
+}
+
+/* Pipi 名稱 */
+.founder-card:not(.sho-card) .founder-info h3 {
+  color: #A6735A;
+}
+
+/* Meet The Team 小標題 */
+.founder-card:not(.sho-card) .founder-info span.subtitle {
+  color: #A6735A;
+}
+
+/* 職稱文字與下方分隔線 */
+.founder-card:not(.sho-card) .founder-info .role {
+  color: #795A4C;
+  border-bottom-color: rgba(166,115,90,0.2);
+}
+
+/* Pipi 聯絡按鈕 */
+.founder-card:not(.sho-card) .btn-outline {
+  background: #EBD6C9;
+}
+
+/* Pipi 聯絡按鈕滑鼠移入效果 */
+.founder-card:not(.sho-card) .btn-outline:hover {
+  background: #F3DED2;
+}
 
     /* --- 新增：合作經驗 (Project Experience) 區塊 --- */
     .exp-section {
@@ -596,7 +641,7 @@
     <div class="container">
       <div class="hero-content">
         <h2>專業分工 <span class="x">✕</span> 細心合作，讓每一份想法穩穩成形。</h2>
-        <p>Wee~Haru 微春工作室提供視覺與電商設計、平面設計、短影片剪輯、太陽能光電申請圖說，以及遊戲與漫畫等娛樂文本翻譯及校稿，依照不同專業與需求細心完成每份委託。</p>
+        <p>Wee~Haru 微春工作室提供視覺與電商設計、平面設計、短影片剪輯、太陽能光電申請圖說，以及中日英翻譯、校稿與文字修訂，服務範圍涵蓋娛樂文本、企業與品牌內容及一般商業文件，依照不同專業與需求細心完成每份委託。</p>
         
 
 <div class="tags">
@@ -605,7 +650,7 @@
   <span class="tag">圖片編修 / 商品上架</span>
   <span class="tag green">短影片剪輯</span>
   <span class="tag">太陽能光電圖說</span>
-  <span class="tag green">娛樂文本翻譯 / 校稿</span>
+  <span class="tag green">中日英翻譯 / 校稿</span>
 </div>
       </div>
     </div>
@@ -772,7 +817,7 @@
       <div class="about-quote reveal">
         <p>好的設計，就像春日微風，溫柔地整理資訊，也讓品牌的故事被好好看見。</p>
         <p>Wee~Haru 專注於乾淨的視覺與清晰的排版結構，透過簡潔而有節奏的畫面語言，為品牌打造舒適且有價值的閱讀體驗。</p>
-        <p>由兩位不同專業領域的夥伴共同組成，結合視覺設計、工程圖說與娛樂文本翻譯等專業，重視理解需求、細節與合作品質。</p>
+        <p>由兩位不同專業領域的夥伴共同組成，結合視覺設計、工程圖說與中日英翻譯校稿等專業，重視理解需求、細節與合作品質。</p>
       </div>
 
       <!-- 團隊介紹：保留原有 founder-card 排版，兩位分別使用自己的插畫 -->
@@ -807,12 +852,12 @@
         <div class="founder-info">
           <span class="subtitle">Meet The Team</span>
           <h3>Sho</h3>
-          <div class="role">太陽能光電圖說｜娛樂文本翻譯｜文字校稿</div>
+          <div class="role">太陽能光電圖說｜中日英翻譯｜校稿修訂</div>
 
-          <p>主要負責太陽能光電申請相關圖說製作，以及遊戲、漫畫等娛樂文本的中日英翻譯與校稿，依照不同案件需求提供專業服務。</p>
+          <p>主要負責太陽能光電申請相關圖說製作，以及中日英翻譯、校稿與文字修訂服務。承接遊戲、漫畫等娛樂文本，也提供企業官網、公司簡介、品牌與商品介紹、行銷文案及一般商業文件等翻譯需求。</p>
           <p>在工程圖說方面，重視資訊的清晰度、正確性與完整性，依據台電及政府機關的申請需求製作相關圖說，並細心確認各項圖面細節。</p>
-          <p>在文字翻譯方面，具備中文與日文雙母語背景，熟悉不同語言的表達習慣與文化差異。除了準確傳達原文語意，也注重作品世界觀、角色個性與對話語氣，讓譯文保留原作風格，同時自然流暢。</p>
-          <p>無論是嚴謹的工程圖說，或講求語感的文字創作，都以細心與準確為原則，讓每一份成果符合實際需求。</p>
+          <p>在文字翻譯方面，具備中文與日文雙母語背景，熟悉不同語言的表達習慣與文化差異，重視忠實傳達原意、專業用詞及語句自然度；針對遊戲與漫畫等創作文本，也會兼顧世界觀、角色個性與對話語氣。</p>
+          <p>無論是嚴謹的工程圖說、企業商業文件，或講求語感的創作文本，都以細心與準確為原則，讓每一份成果符合實際需求。</p>
 
           <div style="margin-top: 30px;">
             <a href="https://line.me/ti/p/YEyoL4dP6r" target="_blank" rel="noopener noreferrer" class="btn-outline">與 Sho 聊聊合作</a>
@@ -890,7 +935,7 @@
       <h4>中日英翻譯／校稿
         <span>Translation & Proofreading</span>
       </h4>
-      <p>以遊戲、漫畫等娛樂文本為主，重視語意準確、角色語氣與原作風格。</p>
+      <p>涵蓋遊戲漫畫、企業官網、公司簡介、品牌商品介紹及一般商業文件，重視原意準確、語氣自然與用詞一致。</p>
     </div>
 
   </div>
@@ -938,11 +983,14 @@
         <div class="price-row"><div class="p-title">免雜項＋同意備案圖說</div><div class="p-desc">申請相關圖說製作；不含簽證與承裝業用印</div><div class="p-amount">$10,000／案</div></div>
         <div class="price-row"><div class="p-title">全套申請圖說</div><div class="p-desc">台電五大圖說＋計算式、免雜項及同意備案三者合計；依案件條件評估</div><div class="p-amount">$18,000／案</div></div>
 
-        <div class="price-category" style="margin-top: 60px; color:#173D37; border-bottom-color:#DFC6A3;">娛樂文本翻譯與校稿</div>
-        <div class="price-row"><div class="p-title">英文 → 中文／日文</div><div class="p-desc">依原文英文單字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／英文單字</div></div>
-        <div class="price-row"><div class="p-title">中文 → 英文／日文</div><div class="p-desc">依原文中文字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／中文字</div></div>
-        <div class="price-row"><div class="p-title">日文 → 中文／英文</div><div class="p-desc">依原文日文字數計費；以遊戲、漫畫等娛樂文本為主</div><div class="p-amount">$1／日文字</div></div>
-        <div class="price-row"><div class="p-title">娛樂文本校稿（含修改）</div><div class="p-desc">依原文中文字／日文字，或原文英文單字數計費</div><div class="p-amount">$3／原文字或英文單字</div></div>
+        <div class="price-category" style="margin-top: 60px; color:#173D37; border-bottom-color:#DFC6A3;">中日英翻譯／校稿服務</div>
+        <p style="font-size:14px; color:var(--muted); line-height:1.9; margin:0 0 20px;">具備中日雙母語優勢，提供中、日、英互譯與校稿／文字修訂。承接遊戲漫畫與娛樂文本、企業官網、公司簡介、品牌與商品介紹、行銷文案及一般商業文件；其他文字需求亦可洽詢評估。</p>
+        <div class="price-row"><div class="p-title">中文 → 英文／日文</div><div class="p-desc">兩種譯向同價；依原文中文字數計費</div><div class="p-amount">$1.5～2.5／中文字</div></div>
+        <div class="price-row"><div class="p-title">英文 → 中文</div><div class="p-desc">依原文英文單字數計費</div><div class="p-amount">$1.2～2／英文單字</div></div>
+        <div class="price-row"><div class="p-title">英文 → 日文</div><div class="p-desc">依原文英文單字數計費</div><div class="p-amount">$2～3／英文單字</div></div>
+        <div class="price-row"><div class="p-title">日文 → 中文</div><div class="p-desc">依原文日文字數計費</div><div class="p-amount">$1～1.5／日文字</div></div>
+        <div class="price-row"><div class="p-title">日文 → 英文</div><div class="p-desc">依原文日文字數計費</div><div class="p-amount">$1.5～2.5／日文字</div></div>
+        <div class="price-row"><div class="p-title">校稿／文字修訂（含修改）</div><div class="p-desc">核對原文與譯文、修正錯譯、文法與用詞，並依原意潤飾語句、調整語氣；不僅限於錯字檢查</div><div class="p-amount">$3／原文字或英文單字</div></div>
 
         <div class="note-box">
           <h4>服務備註</h4>
@@ -951,8 +999,8 @@
             <li><b>設計交付：</b>社群與電商圖片提供 JPG／PNG；平面設計提供印刷用 PDF／JPG／PNG；LOGO 標誌設計提供 AI 可編輯原始檔、JPG 及透明背景 PNG。</li>
             <li><b>印刷：</b>僅提供設計及印刷檔製作（含必要時的 CMYK、出血與裁切標示），不承接實體印刷、代印或印刷廠對接。</li>
             <li><b>工程圖說：</b>僅承接台電及政府機關申請相關圖說設計，不包含竣工圖、簽證、承裝業用印或代辦送件。</li>
-            <li><b>翻譯／校稿：</b>僅承接遊戲、漫畫等娛樂性文本；不承接醫療、法律等專業文件。校稿與翻譯均按原文計費。</li>
-            <li>以上為新台幣參考起價，所有平台採相同報價標準，正式金額以案件需求確認後提供的報價為準。</li>
+            <li><b>翻譯／校稿：</b>提供中日英互譯及校稿／文字修訂，包含娛樂文本、企業與品牌內容及一般商業文件。不承接涉及重大法律責任或醫療安全風險的高度專業文件。翻譯與校稿均按原文字數／英文單字數計費，實際報價視內容、字數、修改幅度與交期評估；原則上依原始檔案格式回傳，也可另議指定格式。</li>
+            <li>以上均為新台幣參考起價或價格區間，所有平台採相同報價標準，正式金額以案件需求確認後提供的報價為準。</li>
           </ul>
         </div>
       </div>
@@ -1026,7 +1074,7 @@
           <details>
             <summary>各項服務會提供可編輯原始檔嗎？</summary>
             <p>社群與電商圖片提供 JPG／PNG；平面設計提供印刷用 PDF／JPG／PNG；LOGO 標誌設計提供 AI 可編輯原始檔、JPG 及透明背景 PNG。其他可編輯原始檔需求可於報價時另行討論。</p>
-            <p>工程圖說依案件需求提供相關圖說檔案；娛樂文本翻譯與校稿則依雙方約定提供文字檔案。相關交付格式及可編輯原始檔需求，皆可於合作前確認。</p>
+            <p>工程圖說依案件需求提供相關圖說檔案；中日英翻譯與校稿原則上依原始檔案格式回傳，亦可依約定格式交付。相關交付格式及可編輯原始檔需求，皆可於合作前確認。</p>
 
           </details>
         </div>
@@ -1175,5 +1223,57 @@
       });
     });
   </script>
+<!-- ===============================
+     Wee~Haru 前台防複製保護
+     保留正常瀏覽、連結及作品輪播功能
+================================ -->
+<style>
+  /* 限制訪客選取一般文字 */
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* 限制直接拖曳圖片 */
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+  /* 首頁的接案需求格式仍開放選取、複製 */
+  .copy-box, .copy-box *,
+  input, textarea, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+</style>
+<script>
+  (function () {
+    function allowCopy(target) {
+      return target instanceof Element &&
+        !!target.closest('.copy-box, input, textarea, [contenteditable="true"]');
+    }
+
+    document.addEventListener('contextmenu', function (event) {
+      if (!allowCopy(event.target)) event.preventDefault();
+    });
+
+    document.addEventListener('copy', function (event) {
+      if (!allowCopy(event.target)) event.preventDefault();
+    });
+
+    document.addEventListener('dragstart', function (event) {
+      if (event.target instanceof Element && event.target.closest('img')) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      const key = event.key.toLowerCase();
+      if (event.ctrlKey || event.metaKey) {
+        if (key === 's' || key === 'u') event.preventDefault();
+        if (key === 'c' && !allowCopy(event.target)) event.preventDefault();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
