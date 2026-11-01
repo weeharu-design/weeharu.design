@@ -940,6 +940,22 @@
       .header-mascot { width: 38vw; right: 8px; }
       .header .brand-text h1 { font-size: 16px; }
     }
+  
+    /* ==========================================================
+       修正：滿版 GIF 頁首不得覆蓋下方主視覺
+       sticky 保留置頂導覽，但會占用自己的版面高度。
+       只修改頁首定位；不修改 GIF、SEO、服務或其他動畫。
+       ========================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+    }
+
+    /* 作品頁原先為 fixed 頁首預留的上方 200px 不再需要。 */
+    .works-only #work { padding-top: 60px; }
+    @media (max-width: 900px) { .works-only #work { padding-top: 45px; } }
+    @media (max-width: 600px) { .works-only #work { padding-top: 38px; } }
+
   </style>
 </head>
 <body class="works-only">
