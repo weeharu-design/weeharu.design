@@ -5,23 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- ================= 基本 SEO 設定 ================= -->
-  <title>作品展示｜Pipi × Sho｜Wee~Haru 微春工作室</title>
-  <meta name="description" content="Wee~Haru 微春工作室 Pipi 與 Sho 作品展示，收錄一頁式視覺、LOGO、電商商品圖、名片、包裝與太陽能光電申請圖說。" />
-  <meta name="keywords" content="Wee~Haru, 微春工作室, Pipi, Sho, 視覺設計, 電商設計, 平面設計, LOGO設計, 社群圖片, 圖片編修, 太陽能光電申請圖說, 遊戲翻譯, 漫畫翻譯, 中日英翻譯, 校稿" />
-  <meta name="author" content="Wee~Haru 微春工作室" />
+  <title>Wee~Haru微春工作室｜作品展示・Pipi × Sho 設計與光電圖說</title>
+  <meta name="description" content="Wee~Haru微春工作室作品展示：Pipi 的一頁式電商視覺、LOGO、名片、菜單、封面及包裝設計，以及 Sho 的太陽能光電申請圖說。探索雙人工作室的精選實績。" />
+  <meta name="keywords" content="Wee~Haru, 微春工作室, Pipi, Sho, 視覺設計, 電商設計, 平面設計, LOGO設計, 社群圖片, 圖片編修, 太陽能光電申請圖說, 遊戲翻譯, 漫畫翻譯, 企業官網翻譯, 商業文件翻譯, 中日英翻譯, 校稿" />
+  <meta name="author" content="Wee~Haru微春工作室" />
 
   <!-- ================= 社群分享 (Facebook / LINE / IG) Open Graph 設定 ================= -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="精選作品｜Wee~Haru 微春工作室" />
-  <meta property="og:description" content="Wee~Haru 微春工作室的設計作品展示：電商一頁式廣告、情境視覺及品牌視覺重塑。" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="Wee~Haru微春工作室｜Pipi × Sho 精選作品" />
+  <meta property="og:description" content="欣賞電商一頁式、LOGO、名片、菜單與封面、包裝設計，以及太陽能光電申請圖說等精選作品。" />
   <meta property="og:url" content="https://weeharu-design.github.io/weeharu.design/works.html" /> <!-- 若未來啟用自訂網域，記得同步更新 -->
-  <meta property="og:site_name" content="Wee~Haru 微春工作室" />
+  <meta property="og:site_name" content="Wee~Haru微春工作室" />
   <meta property="og:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" /> <!-- 圖檔請放在網站根目錄，建議 1200x630 -->
+
+  <link rel="canonical" href="https://weeharu-design.github.io/weeharu.design/works.html" />
 
   <!-- ================= Twitter 分享設定 ================= -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="精選作品｜Wee~Haru 微春工作室" />
-  <meta name="twitter:description" content="Wee~Haru 微春工作室的設計作品展示：電商一頁式廣告、情境視覺及品牌視覺重塑。" />
+  <meta name="twitter:title" content="Wee~Haru微春工作室｜Pipi × Sho 精選作品" />
+  <meta name="twitter:description" content="欣賞電商一頁式、LOGO、名片、菜單與封面、包裝設計，以及太陽能光電申請圖說等精選作品。" />
   <meta name="twitter:image" content="https://weeharu-design.github.io/weeharu.design/og-image.jpg" />
 
   <!-- ================= 網址圖標 (Favicon) 設定 ================= -->
@@ -474,7 +477,7 @@
 
     /* ===================================================
        Wee~Haru｜作品展示頁限定：上下中英跑馬燈、作品直觀展示
-       原有個案／Behance／太陽能區塊維持不變
+       原有個案／Behance 保留，太陽能圖說整合至唯一輪播
     ==================================================== */
     /* 保留原本三個精選案例的左右交錯排列 */
     .works-only #work > .case-row:nth-child(odd) { flex-direction: row-reverse; }
@@ -739,6 +742,111 @@
       .works-quicknav.is-pinned .works-quicknav__links a { font-size: 12px; padding: 7px 12px; }
     }
 
+
+    /* ========= 六類作品唯一輪播區：直接可見，Pipi 與 Sho 一起展示 ========= */
+    .works-feature {
+      background: #fff;
+      border: 1px solid rgba(166,115,90,.13);
+      box-shadow: 0 14px 36px rgba(0,0,0,.045);
+      border-radius: 28px;
+      overflow: hidden;
+      margin: 0 0 44px;
+    }
+    .works-feature__heading {
+      padding: 23px 26px 12px;
+      display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    }
+    .works-feature__heading h3 { font-size: 19px; font-weight: 800; }
+    .works-feature__heading span { font-size: 12px; color: var(--muted); }
+    .works-feature__stage {
+      display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr);
+      min-height: 400px;
+    }
+    .works-feature__media {
+      position: relative; min-width: 0; overflow: hidden;
+      background: #F8F5F1; display: grid; place-items: center;
+    }
+    .works-feature__image {
+      width: 100%; border: 0; padding: 0; background: none; cursor: zoom-in;
+      display: block; position: relative;
+    }
+    .works-feature__image img {
+      width: 100%; aspect-ratio: 4 / 3; height: auto;
+      object-fit: contain; display: block;
+    }
+    .works-feature__image:focus-visible { outline: 3px solid #A6735A; outline-offset: -4px; }
+    .works-feature__zoom {
+      position: absolute; bottom: 14px; right: 14px;
+      background: rgba(252,250,248,.96); color: #6A554B;
+      padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    }
+    .works-feature__info {
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 13px; padding: 36px 37px;
+      background: linear-gradient(135deg,#fff 0%,#FCFAF8 100%);
+    }
+    .works-feature__eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 1.7px; color: #A6735A; }
+    .works-feature__info h4 { font-size: 26px; line-height: 1.4; }
+    .works-feature__info p { font-size: 14px; color: var(--muted); line-height: 1.9; }
+    .works-feature__controls {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; padding: 16px 25px 18px; flex-wrap: wrap;
+      border-top: 1px solid rgba(0,0,0,.05);
+    }
+    .works-feature__arrows { display: flex; gap: 8px; align-items: center; }
+    .works-feature__arrow, .works-feature__pause {
+      border: 1px solid #E9DBD3; background: #fff; color: #785A4B;
+      min-width: 38px; min-height: 38px; padding: 7px 12px;
+      border-radius: 999px; cursor: pointer; font-size: 13px;
+    }
+    .works-feature__arrow:hover, .works-feature__pause:hover { background: #F6EBE5; }
+    .works-feature__dots { display: flex; gap: 9px; align-items: center; }
+    .works-feature__dot {
+      border: 0; padding: 0; background: #DDCFC5;
+      width: 9px; height: 9px; border-radius: 50%; cursor: pointer;
+      transition: width .2s, background-color .2s;
+    }
+    .works-feature__dot.is-active { background: #A6735A; width: 25px; border-radius: 999px; }
+    .works-feature__dot:focus-visible { outline: 2px solid #173D37; outline-offset: 4px; }
+    .works-feature__meta { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; }
+    .works-feature__progress { height: 3px; background: #F0E8E1; overflow: hidden; }
+    .works-feature__progress > span { display: block; height: 100%; width: 0; background: #A6735A; }
+    .works-feature.is-playing .works-feature__progress > span { animation: worksFeatureProgress 5s linear infinite; }
+    @keyframes worksFeatureProgress { from { width: 0; } to { width: 100%; } }
+    @media (max-width: 780px) {
+      .works-feature__stage { grid-template-columns: 1fr; min-height: 0; }
+      .works-feature__info { padding: 22px 24px 26px; gap: 7px; }
+      .works-feature__info h4 { font-size: 22px; }
+      .works-feature__heading { padding: 18px 20px 12px; }
+      .works-feature__controls { padding: 14px 17px; }
+    }
+    @media (max-width: 420px) {
+      .works-feature__controls { gap: 10px; }
+      .works-feature__meta { flex-basis: 100%; justify-content: space-between; }
+      .works-feature__info { padding: 17px 20px 19px; }
+      .works-feature__info p { font-size: 13px; }
+    }
+
+
+    /* 六類作品使用同一個輪播展區，不再重複出現五張大卡片。 */
+    .works-slide-targets { height: 0; position: relative; }
+    .works-slide-targets > span { display: block; height: 0; scroll-margin-top: calc(var(--works-header-height) + var(--works-pinned-height) + 22px); }
+    #visual-showcase { scroll-margin-top: calc(var(--works-header-height) + var(--works-pinned-height) + 22px); }
+    .works-feature { margin-bottom: 10px; }
+    .works-feature__info { gap: 12px; }
+    .works-feature__focus { font-size: 13px !important; color: #8B7061 !important; line-height: 1.85 !important; margin-top: 3px; }
+    .works-feature__focus strong { color: #A6735A; }
+    .works-feature.is-sho { border-color: rgba(23,61,55,.25); }
+    .works-feature.is-sho .works-feature__info { background: linear-gradient(135deg,#F6F3EA,#FFF); }
+    .works-feature.is-sho .works-feature__info h4 { color: #173D37; }
+    .works-feature.is-sho .works-feature__eyebrow,
+    .works-feature.is-sho .works-feature__focus strong { color: #517464; }
+    .works-feature.is-sho .works-feature__progress > span { background: #80988C; }
+    .works-feature__dot--sho { background: #80988C; }
+    .works-feature__dot--sho.is-active { background: #173D37; }
+    .works-feature__image img { max-height: 540px; }
+    .works-showcase__intro { margin-bottom: 30px; }
+    @media (max-width: 780px) { .works-feature__image img { max-height: none; } }
   </style>
 </head>
 <body class="works-only">
@@ -795,12 +903,12 @@
         <h3>依作品類型快速瀏覽</h3>
         <div class="works-quicknav__links">
           <a href="#case-onepage">一頁式設計</a>
-          <a href="#case-logo">LOGO 設計</a>
-          <a href="#case-ecommerce">電商商品圖</a>
-          <a href="#case-business-card">名片設計</a>
-          <a href="#case-editorial">菜單／封面</a>
-          <a href="#case-packaging">包裝設計</a>
-          <a href="#sho-works" class="works-quicknav__sho">太陽能圖說</a>
+          <a href="#case-logo" data-feature-target="0">LOGO 設計</a>
+          <a href="#case-ecommerce" data-feature-target="2">電商商品圖</a>
+          <a href="#case-business-card" data-feature-target="3">名片設計</a>
+          <a href="#case-editorial" data-feature-target="4">菜單／封面</a>
+          <a href="#case-packaging" data-feature-target="5">包裝設計</a>
+          <a href="#sho-works" data-feature-target="1" class="works-quicknav__sho">太陽能圖說</a>
         </div>
       </nav>
 
@@ -854,137 +962,64 @@
         </a>
       </div>
 
-      <!-- 新增｜Pipi 五大類作品直接展示（保留前方兩個一頁式案例及 Behance 連結） -->
+      <!-- 六類作品共用一個輪播：Pipi 與 Sho 交錯展示，不重複排列相同的大圖 -->
       <section class="works-showcase" id="visual-showcase" aria-labelledby="visual-showcase-title">
         <div class="works-showcase__intro reveal">
-          <span class="works-showcase__eyebrow">MORE VISUAL WORKS</span>
-          <h2 id="visual-showcase-title">更多視覺設計作品</h2>
-          <p>Pipi｜從品牌識別到商品視覺，呈現不同類型的設計與實際應用。</p>
+          <span class="works-showcase__eyebrow">PIPI × SHO · CREATIVE & TECHNICAL WORKS</span>
+          <h2 id="visual-showcase-title">設計作品與專業實績</h2>
+          <p>Pipi 的五種視覺設計類型，與 Sho 的太陽能光電申請圖說，整合在同一個展區。每 5 秒自動切換，也能自由選擇想看的作品。</p>
         </div>
-        <div class="works-showcase__grid">
-        <article class="works-showcase__card reveal" id="case-logo">
-          <button type="button" class="works-showcase__image" data-open="modal-work-logo" aria-label="放大觀看LOGO 設計作品">
-            <img src="work-logo.jpg" alt="Wee~Haru 微春工作室｜LOGO 設計作品展示" loading="lazy" decoding="async">
-            <span class="works-showcase__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
-          </button>
-          <div class="works-showcase__body">
-            <small>Logo Design</small>
-            <h3>LOGO 設計</h3>
-            <p>品牌識別與標誌設計，依不同品牌個性呈現視覺特色。</p>
-            <p class="works-showcase__focus"><strong>設計重點｜</strong>從品牌特徵出發，兼顧造型辨識度與後續應用彈性。</p>
-          </div>
-        </article>
-        <article class="works-showcase__card reveal" id="case-ecommerce">
-          <button type="button" class="works-showcase__image" data-open="modal-work-ecommerce" aria-label="放大觀看電商商品圖作品">
-            <img src="work-ecommerce.jpg" alt="Wee~Haru 微春工作室｜電商商品圖作品展示" loading="lazy" decoding="async">
-            <span class="works-showcase__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
-          </button>
-          <div class="works-showcase__body">
-            <small>E-commerce Visuals</small>
-            <h3>電商商品圖</h3>
-            <p>商品主圖、副圖及使用情境視覺，以清楚的資訊層級傳達商品特色。</p>
-            <p class="works-showcase__focus"><strong>設計重點｜</strong>利用對比與資訊分區，讓產品賣點能在短時間內被看見。</p>
-          </div>
-        </article>
-        <article class="works-showcase__card reveal" id="case-business-card">
-          <button type="button" class="works-showcase__image" data-open="modal-work-card" aria-label="放大觀看名片設計作品">
-            <img src="work-business-card.jpg" alt="Wee~Haru 微春工作室｜名片設計作品展示" loading="lazy" decoding="async">
-            <span class="works-showcase__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
-          </button>
-          <div class="works-showcase__body">
-            <small>Business Card Design</small>
-            <h3>名片設計</h3>
-            <p>依產業需求與品牌調性規劃名片版面，兼顧識別與閱讀性。</p>
-            <p class="works-showcase__focus"><strong>設計重點｜</strong>以字級、留白與資訊順序建立清楚且耐看的版面。</p>
-          </div>
-        </article>
-        <article class="works-showcase__card reveal" id="case-editorial">
-          <button type="button" class="works-showcase__image" data-open="modal-work-editorial" aria-label="放大觀看菜單／封面設計作品">
-            <img src="work-editorial.jpg" alt="Wee~Haru 微春工作室｜菜單／封面設計作品展示" loading="lazy" decoding="async">
-            <span class="works-showcase__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
-          </button>
-          <div class="works-showcase__body">
-            <small>Editorial &amp; Cover Design</small>
-            <h3>菜單／封面設計</h3>
-            <p>餐飲菜單與小說封面等平面編排，呈現不同題材的視覺氛圍。</p>
-            <p class="works-showcase__focus"><strong>設計重點｜</strong>依用途安排視覺主次，讓資訊閱讀與主題情緒自然結合。</p>
-          </div>
-        </article>
-        <article class="works-showcase__card reveal" id="case-packaging">
-          <button type="button" class="works-showcase__image" data-open="modal-work-packaging" aria-label="放大觀看包裝設計作品">
-            <img src="work-packaging.jpg" alt="Wee~Haru 微春工作室｜包裝設計作品展示" loading="lazy" decoding="async">
-            <span class="works-showcase__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
-          </button>
-          <div class="works-showcase__body">
-            <small>Packaging Design</small>
-            <h3>包裝設計</h3>
-            <p>紙箱、提盒與貼紙等包裝視覺，延伸品牌形象至實際包材。</p>
-            <p class="works-showcase__focus"><strong>設計重點｜</strong>考量包材展開與成品使用情境，延續一致的品牌識別。</p>
-          </div>
-        </article>
+        <!-- 保留各分類原本的網址錨點；全部指向同一個展區，由程式切換對應作品 -->
+        <div class="works-slide-targets" aria-hidden="true">
+          <span id="case-logo"></span>
+          <span id="case-ecommerce"></span>
+          <span id="case-business-card"></span>
+          <span id="case-editorial"></span>
+          <span id="case-packaging"></span>
+          <span id="sho-works"></span>
         </div>
-        <p class="works-showcase__note">＊作品圖片僅供展示；部分作品資訊已遮蔽處理，請勿未經授權使用。</p>
+        <div class="works-feature is-playing" id="featured-works" aria-label="Pipi 與 Sho 六類精選作品輪播" aria-roledescription="輪播展示">
+          <div class="works-feature__heading">
+            <h3>作品精選</h3>
+            <span>一個展區・六類作品・自動與手動切換</span>
+          </div>
+          <div class="works-feature__stage">
+            <div class="works-feature__media">
+              <button class="works-feature__image" id="feature-open" type="button" data-open="modal-work-logo" aria-label="放大觀看 LOGO 設計作品">
+                <img id="feature-image" src="work-logo.jpg" alt="LOGO 設計作品展示" width="1200" height="900" decoding="async">
+                <span class="works-feature__zoom"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> 點擊放大</span>
+              </button>
+            </div>
+            <div class="works-feature__info">
+              <span class="works-feature__eyebrow" id="feature-en">PIPI · LOGO DESIGN</span>
+              <h4 id="feature-title">LOGO 設計</h4>
+              <p id="feature-desc">品牌識別與標誌設計，依不同品牌個性呈現視覺特色。</p>
+              <p class="works-feature__focus" id="feature-focus"><strong>設計重點｜</strong>從品牌特徵出發，兼顧造型辨識度與後續應用彈性。</p>
+            </div>
+          </div>
+          <div class="works-feature__controls">
+            <div class="works-feature__arrows">
+              <button class="works-feature__arrow" id="feature-prev" type="button" aria-label="上一張作品"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> 上一張</button>
+              <button class="works-feature__arrow" id="feature-next" type="button" aria-label="下一張作品">下一張 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="works-feature__dots" aria-label="直接選擇六類作品">
+              <button class="works-feature__dot is-active" data-feature-index="0" type="button" aria-label="第 1 張：LOGO 設計" aria-pressed="true"></button>
+              <button class="works-feature__dot works-feature__dot--sho" data-feature-index="1" type="button" aria-label="第 2 張：Sho 太陽能光電圖說" aria-pressed="false"></button>
+              <button class="works-feature__dot" data-feature-index="2" type="button" aria-label="第 3 張：電商商品圖" aria-pressed="false"></button>
+              <button class="works-feature__dot" data-feature-index="3" type="button" aria-label="第 4 張：名片設計" aria-pressed="false"></button>
+              <button class="works-feature__dot" data-feature-index="4" type="button" aria-label="第 5 張：菜單／封面" aria-pressed="false"></button>
+              <button class="works-feature__dot" data-feature-index="5" type="button" aria-label="第 6 張：包裝設計" aria-pressed="false"></button>
+            </div>
+            <div class="works-feature__meta">
+              <span id="feature-count">01 / 06</span>
+              <button class="works-feature__pause" id="feature-playpause" type="button" aria-label="暫停自動輪播" aria-pressed="false"><i class="fa-solid fa-pause" aria-hidden="true"></i> 暫停</button>
+            </div>
+          </div>
+          <div class="works-feature__progress" aria-hidden="true"><span></span></div>
+        </div>
+        <p class="works-showcase__note">＊作品圖片僅供展示；部分品牌、名片及案件資訊已適度遮蔽，未經授權請勿轉載使用。</p>
       </section>
     </section>
-
-<!-- =====================================
-     Sho｜太陽能光電申請圖說作品展示
-===================================== -->
-<section class="section" id="sho-works">
-
-  <div class="section-header reveal">
-    <h2 style="color:#173D37;">
-      Solar PV Drawings
-    </h2>
-    <p>Sho｜太陽能光電申請圖說作品展示</p>
-  </div>
-
-  <!-- 太陽能圖說作品 01 -->
-  <div class="case-row reveal">
-
-    <div class="case-image-wrapper">
-
-      <div class="badge-protect">
-        <i class="fa-solid fa-eye-slash"
-           style="margin-right:6px;"></i>
-        局部資訊保護
-      </div>
-
-      <div class="case-image"
-           style="background-image:url('solar-case01.jpg');">
-      </div>
-
-    </div>
-
-    <div class="case-info">
-
-      <h3>
-        太陽能光電<br>
-        申請圖說設計
-      </h3>
-
-      <p>
-        依據台電及政府機關申請需求，
-        進行太陽能光電相關圖說製作，
-        重視圖面資訊的清晰度、正確性與完整性，
-        並細心確認各項設計細節。
-      </p>
-      <p class="works-solar-focus"><strong>圖說重點｜</strong>重視圖面標註、配置資訊與申請資料的一致性，讓後續檢視更有效率。</p>
-
-      <button class="btn-outline"
-              data-open="modal-solar01"
-              style="border-color:#80988C; color:#173D37;">
-
-        <i class="fa-solid fa-expand"></i>
-        展開圖說作品
-
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
 
       <!-- 頁尾英文作品類別跑馬燈 -->
       <div class="works-ticker works-ticker--bottom" aria-label="E-commerce Visuals、Logo Design、Business Cards、Editorial Layout、Packaging Design、Solar PV Drawings">
@@ -1353,5 +1388,151 @@
         header.getBoundingClientRect().height + (isPinned ? quickNav.getBoundingClientRect().height : measurePinnedHeight()) + 20;
     })();
   </script>
+  <script>
+    // Pipi 五大類 + Sho 太陽能圖說：單一輪播，不重複完整圖片。
+    (() => {
+      const featured = document.getElementById('featured-works');
+      if (!featured) return;
+      const slides = [
+        {title:'LOGO 設計', en:'LOGO DESIGN', creator:'PIPI', file:'work-logo.jpg', modal:'modal-work-logo', desc:'品牌識別與標誌設計，依不同品牌個性呈現視覺特色。', focus:'從品牌特徵出發，兼顧造型辨識度與後續應用彈性。'},
+        {title:'太陽能光電申請圖說', en:'SOLAR PV DRAWINGS', creator:'SHO', file:'solar-case01.jpg', modal:'modal-solar01', desc:'依據台電及政府機關申請需求製作太陽能光電圖說，重視圖面資訊的清晰、正確與完整。', focus:'重視圖面標註、配置資訊與申請資料的一致性，讓後續檢視更有效率。'},
+        {title:'電商商品圖', en:'E-COMMERCE VISUALS', creator:'PIPI', file:'work-ecommerce.jpg', modal:'modal-work-ecommerce', desc:'商品主圖、副圖及情境視覺，以清楚的資訊層級傳達商品特色。', focus:'利用對比與資訊分區，讓產品賣點能在短時間內被看見。'},
+        {title:'名片設計', en:'BUSINESS CARD DESIGN', creator:'PIPI', file:'work-business-card.jpg', modal:'modal-work-card', desc:'依產業需求與品牌調性規劃名片版面，兼顧識別與閱讀性。', focus:'以字級、留白與資訊順序建立清楚且耐看的版面。'},
+        {title:'菜單／封面設計', en:'EDITORIAL & COVER DESIGN', creator:'PIPI', file:'work-editorial.jpg', modal:'modal-work-editorial', desc:'餐飲菜單與小說封面等平面編排，呈現不同題材的視覺氛圍。', focus:'依用途安排視覺主次，讓資訊閱讀與主題情緒自然結合。'},
+        {title:'包裝設計', en:'PACKAGING DESIGN', creator:'PIPI', file:'work-packaging.jpg', modal:'modal-work-packaging', desc:'紙箱、提盒與貼紙等包裝視覺，延伸品牌形象至實際包材。', focus:'考量包材展開與成品使用情境，延續一致的品牌識別。'}
+      ];
+      const img = document.getElementById('feature-image');
+      const opener = document.getElementById('feature-open');
+      const dots = Array.from(featured.querySelectorAll('[data-feature-index]'));
+      const title = document.getElementById('feature-title');
+      const en = document.getElementById('feature-en');
+      const desc = document.getElementById('feature-desc');
+      const focus = document.getElementById('feature-focus');
+      const count = document.getElementById('feature-count');
+      const toggle = document.getElementById('feature-playpause');
+      const progress = featured.querySelector('.works-feature__progress > span');
+      let index = 0;
+      let autoplay = true;
+      let interval = null;
+      const time = 5000;
+
+      // 預載五張後續圖片；第二張 Sho 使用原有 solar-case01.jpg。
+      slides.slice(1).forEach(item => { const image = new Image(); image.src = item.file; });
+      function render() {
+        const slide = slides[index];
+        if (img.getAttribute('src') !== slide.file) img.src = slide.file;
+        img.alt = `${slide.creator}｜${slide.title}作品展示`;
+        opener.dataset.open = slide.modal;
+        opener.setAttribute('aria-label', `放大觀看${slide.title}`);
+        title.textContent = slide.title;
+        en.textContent = `${slide.creator} · ${slide.en}`;
+        desc.textContent = slide.desc;
+        focus.innerHTML = `<strong>${slide.creator === 'SHO' ? '圖說重點' : '設計重點'}｜</strong>${slide.focus}`;
+        count.textContent = `${String(index+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+        featured.classList.toggle('is-sho', slide.creator === 'SHO');
+        dots.forEach((dot,i) => {
+          dot.classList.toggle('is-active', i === index);
+          dot.setAttribute('aria-pressed',String(i === index));
+        });
+      }
+      function startTimer() {
+        clearInterval(interval);
+        if (progress) {
+          progress.style.animation = 'none';
+          void progress.offsetWidth;
+          progress.style.animation = '';
+        }
+        if (!autoplay || document.hidden) return;
+        interval = setInterval(() => {
+          if (document.querySelector('.modal.open')) return;
+          index = (index + 1) % slides.length;
+          render();
+        },time);
+      }
+      function moveTo(next) {
+        index = (next + slides.length) % slides.length;
+        render();
+        startTimer();
+      }
+      document.getElementById('feature-prev').addEventListener('click', () => moveTo(index-1));
+      document.getElementById('feature-next').addEventListener('click', () => moveTo(index+1));
+      dots.forEach(dot => dot.addEventListener('click', () => moveTo(Number(dot.dataset.featureIndex))));
+      toggle.addEventListener('click', () => {
+        autoplay = !autoplay;
+        featured.classList.toggle('is-playing', autoplay);
+        toggle.innerHTML = autoplay ? '<i class="fa-solid fa-pause" aria-hidden="true"></i> 暫停' : '<i class="fa-solid fa-play" aria-hidden="true"></i> 播放';
+        toggle.setAttribute('aria-label', autoplay ? '暫停自動輪播' : '播放自動輪播');
+        toggle.setAttribute('aria-pressed',String(!autoplay));
+        startTimer();
+      });
+      // 固定分類導覽維持原本網址片段，但分類一律切換這唯一一個輪播區。
+      document.querySelectorAll('.works-quicknav__links [data-feature-target]').forEach(link => {
+        link.addEventListener('click', () => moveTo(Number(link.dataset.featureTarget)));
+      });
+      const hashToIndex = {'#case-logo':0,'#case-ecommerce':2,'#case-business-card':3,'#case-editorial':4,'#case-packaging':5,'#sho-works':1};
+      function followHash() {
+        const selected = hashToIndex[window.location.hash];
+        if (selected !== undefined) moveTo(selected);
+      }
+      window.addEventListener('hashchange',followHash);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) startTimer(); else clearInterval(interval); });
+      render();
+      followHash();
+      startTimer();
+    })();
+  </script>
+
+<!-- ===============================
+     Wee~Haru 前台防複製保護
+     保留正常瀏覽、連結及作品輪播功能
+================================ -->
+<style>
+  /* 限制訪客選取一般文字 */
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* 限制直接拖曳圖片 */
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+  /* 首頁的接案需求格式仍開放選取、複製 */
+  .copy-box, .copy-box *,
+  input, textarea, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+</style>
+<script>
+  (function () {
+    function allowCopy(target) {
+      return target instanceof Element &&
+        !!target.closest('.copy-box, input, textarea, [contenteditable="true"]');
+    }
+
+    document.addEventListener('contextmenu', function (event) {
+      if (!allowCopy(event.target)) event.preventDefault();
+    });
+
+    document.addEventListener('copy', function (event) {
+      if (!allowCopy(event.target)) event.preventDefault();
+    });
+
+    document.addEventListener('dragstart', function (event) {
+      if (event.target instanceof Element && event.target.closest('img')) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      const key = event.key.toLowerCase();
+      if (event.ctrlKey || event.metaKey) {
+        if (key === 's' || key === 'u') event.preventDefault();
+        if (key === 'c' && !allowCopy(event.target)) event.preventDefault();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
