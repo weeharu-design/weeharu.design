@@ -610,6 +610,95 @@
 
 
 
+
+    /* ========================================================
+       Wee~Haru 頁首：縮小 GIF、背景無接縫、保留 GIF 自身循環動畫
+       僅調整頁首區，其他內容維持原樣。
+       ======================================================== */
+    .header {
+      background: #252120; /* 取自 GIF 邊緣的實際底色 */
+      border-bottom: 1px solid rgba(245,230,213,.18);
+      min-height: 268px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .header .brand-text h1 { color: #F6EDE3; }
+    .header .brand-text p { color: #D5C3B6; }
+    .header .nav-links > a:not(.nav-btn) { color: #F6EDE3; }
+    .header .nav-links > a:not(.nav-btn):hover { color: #DFC6A3; }
+    .header .nav-links .nav-btn { background: #DFC6A3; color: #282224; }
+    .header .nav-links .nav-btn:hover { background: #F6EDE3; color: #282224; }
+
+    /* 圖案整體縮小，確保圖像四周都位於頁首深色背景內。 */
+    .header-mascot {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(41vw, 625px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+      z-index: 0;
+      /* 把最上方、最下方的微小色差柔化。 */
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 2%, #000 98%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 2%, #000 98%, transparent 100%);
+    }
+    .header-mascot img {
+      display: block;
+      width: 100%; height: auto;
+      object-fit: contain;
+      -webkit-user-drag: none;
+      user-select: none;
+      /* 左右微漸層融入相同底色，避免看出圖片直邊。 */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+      /* 不再上下移動整張圖片，以免黑邊跑出。GIF 本身會繼續循環播放。 */
+      animation: none;
+    }
+    .header > .brand, .header > .nav-links { position: relative; z-index: 1; }
+
+    /* 中等寬度：將導覽獨立成第二排，避免 GIF 蓋住選單文字。 */
+    @media (min-width: 901px) and (max-width: 1400px) {
+      .header {
+        min-height: 0;
+        flex-wrap: wrap;
+        padding: 18px 34px 15px;
+        row-gap: 24px;
+      }
+      .header > .brand { margin-right: auto; }
+      .header > .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 28px;
+      }
+      .header-mascot {
+        left: 55%;
+        top: 8px;
+        transform: translateX(-50%);
+        width: min(30vw, 345px);
+      }
+    }
+    @media (max-width: 900px) {
+      .header { min-height: 0; flex-wrap: wrap; row-gap: 8px; padding: 12px 24px 10px; }
+      .header > .brand { margin-right: auto; }
+      .header > .nav-links { width: 100%; justify-content: space-between; gap: 8px; }
+      .header-mascot {
+        display: flex; left: auto; right: 20px; top: 13px;
+        transform: none;
+        width: clamp(155px, 27vw, 235px);
+      }
+    }
+    @media (max-width: 600px) {
+      .header { padding: 11px 16px 10px; }
+      .header .brand { gap: 10px; }
+      .header-mascot { width: min(41vw, 160px); right: 10px; top: 12px; }
+      .header .nav-links > a:not(.nav-btn) { font-size: 12px; }
+    }
+    @media (max-width: 375px) {
+      .header-mascot { width: 38vw; right: 8px; }
+      .header .brand-text h1 { font-size: 16px; }
+    }
   </style>
 </head>
 
@@ -622,6 +711,10 @@
         <h1>Wee~Haru</h1>
         <p>微春工作室</p>
       </div>
+    </div>
+    <!-- 頁首中間：靈感製作中 GIF。未來只需替換 weeharu-header.gif 即可。 -->
+    <div class="header-mascot" aria-hidden="true">
+      <img src="weeharu-header.gif" alt="" width="1080" height="401" draggable="false" />
     </div>
     <div class="nav-links">
       <a href="#about">關於我們</a>
@@ -1067,7 +1160,7 @@
         <div class="faq-item">
           <details>
             <summary>可以做不同購物平台的尺寸嗎？</summary>
-            <p>沒問題！請告知您使用的平台（如 1shop / 蝦皮 / MOMO）或需要的具體尺寸即可。</p>
+            <p>沒問題！請告知您使用的平台（如 1shop / 蝦皮 / IG）或需要的具體尺寸即可。</p>
           </details>
         </div>
         <div class="faq-item">
