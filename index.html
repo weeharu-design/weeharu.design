@@ -727,6 +727,62 @@
       .hero { min-height: 535px; padding-top: 40px; padding-bottom: 36px; }
     }
 
+  
+
+    /* =======================================================
+       2026-11-12｜電腦版頁首精簡：縮小黑色區塊與中央貓咪
+       只調整桌機／中等螢幕，手機維持原本排版。
+       保留 GIF 原始動畫、logo、選單、黏著導覽與其餘內容。
+       ======================================================= */
+    @media (min-width: 1201px) {
+      .header {
+        min-height: 148px;
+        padding: 10px 30px;
+        flex-wrap: nowrap;
+        row-gap: 0;
+      }
+      .header .brand { gap: 13px; flex-shrink: 0; }
+      .header .logo { width: 76px; height: 76px; border-radius: 22px; flex-shrink: 0; }
+      .header-mascot {
+        left: 49%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(26vw, 365px);
+      }
+      .header > .nav-links {
+        width: auto;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: clamp(12px, 1.3vw, 24px);
+        white-space: nowrap;
+      }
+      .header .nav-btn { padding: 9px 17px; }
+    }
+    /* 中等寬度仍採上、下兩列，避免貓咪碰到選單，但整體更薄。 */
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .header {
+        min-height: 0;
+        flex-wrap: wrap;
+        padding: 8px 24px;
+        row-gap: 0;
+      }
+      .header > .brand { min-height: 92px; gap: 12px; margin-right: auto; }
+      .header .logo { width: 72px; height: 72px; border-radius: 20px; flex-shrink: 0; }
+      .header-mascot {
+        left: 55%;
+        top: 5px;
+        transform: translateX(-50%);
+        width: min(26vw, 240px);
+      }
+      .header > .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 24px;
+        white-space: nowrap;
+      }
+      .header .nav-btn { padding: 7px 16px; }
+    }
   </style>
 </head>
 
