@@ -956,6 +956,69 @@
     @media (max-width: 900px) { .works-only #work { padding-top: 45px; } }
     @media (max-width: 600px) { .works-only #work { padding-top: 38px; } }
 
+
+    /* 2026-11-12｜新增一頁式案例 ③、④：沿用既有交錯排版與放大檢視 */
+    .works-only #work > .case-row.case-row--lion { flex-direction: row-reverse; }
+    .works-only #work > .case-row.case-row--yunxusuo { flex-direction: row; }
+    .case-image--lion, .case-image--yunxusuo { background-position: center top; }
+    .case-info p.case-design-focus { font-size: 13px; line-height: 1.85; color: #8B7061; margin-top: -12px; margin-bottom: 24px; }
+    .case-design-focus strong { color: #A6735A; font-weight: 750; }
+  
+
+    /* =======================================================
+       2026-11-12｜電腦版頁首精簡：縮小黑色區塊與中央貓咪
+       只調整桌機／中等螢幕，手機維持原本排版。
+       保留 GIF 原始動畫、logo、選單、黏著導覽與其餘內容。
+       ======================================================= */
+    @media (min-width: 1201px) {
+      .header {
+        min-height: 148px;
+        padding: 10px 30px;
+        flex-wrap: nowrap;
+        row-gap: 0;
+      }
+      .header .brand { gap: 13px; flex-shrink: 0; }
+      .header .logo { width: 76px; height: 76px; border-radius: 22px; flex-shrink: 0; }
+      .header-mascot {
+        left: 49%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(26vw, 365px);
+      }
+      .header > .nav-links {
+        width: auto;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: clamp(12px, 1.3vw, 24px);
+        white-space: nowrap;
+      }
+      .header .nav-btn { padding: 9px 17px; }
+    }
+    /* 中等寬度仍採上、下兩列，避免貓咪碰到選單，但整體更薄。 */
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .header {
+        min-height: 0;
+        flex-wrap: wrap;
+        padding: 8px 24px;
+        row-gap: 0;
+      }
+      .header > .brand { min-height: 92px; gap: 12px; margin-right: auto; }
+      .header .logo { width: 72px; height: 72px; border-radius: 20px; flex-shrink: 0; }
+      .header-mascot {
+        left: 55%;
+        top: 5px;
+        transform: translateX(-50%);
+        width: min(26vw, 240px);
+      }
+      .header > .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 24px;
+        white-space: nowrap;
+      }
+      .header .nav-btn { padding: 7px 16px; }
+    }
   </style>
 </head>
 <body class="works-only">
@@ -1050,6 +1113,34 @@
           <button class="btn-outline" data-open="modal-incense">
             <i class="fa-solid fa-expand"></i> 展開排版長圖
           </button>
+        </div>
+      </div>
+
+      <!-- 新增案例 ③｜機能資訊導向：LION 衣物去漬產品 -->
+      <div class="case-row case-row--lion reveal" id="case-lion">
+        <div class="case-image-wrapper">
+          <div class="badge-protect"><i class="fa-solid fa-eye" style="margin-right:6px;" aria-hidden="true"></i>僅供作品展示</div>
+          <div class="case-image case-image--lion" role="img" aria-label="LION 衣物去漬產品一頁式設計局部預覽" style="background-image: url('case-lion.jpg');"></div>
+        </div>
+        <div class="case-info">
+          <h3>機能資訊導向<br>一頁式商品視覺 (3)</h3>
+          <p>透過鮮明的色彩對比與清楚的資訊層級，將產品特色、使用情境及操作步驟整合於長版頁面中，讓消費者能快速理解商品重點。</p>
+          <p class="case-design-focus"><strong>設計重點｜</strong>以紅、白色系強化視覺辨識度，搭配圖示與分區排版，讓大量產品資訊依然清晰易讀。</p>
+          <button class="btn-outline" type="button" data-open="modal-lion"><i class="fa-solid fa-expand" aria-hidden="true"></i> 展開排版長圖</button>
+        </div>
+      </div>
+
+      <!-- 新增案例 ④｜柔和氛圍導向：雲絮所衣物香氛 -->
+      <div class="case-row case-row--yunxusuo reveal" id="case-yunxuhome">
+        <div class="case-image-wrapper">
+          <div class="badge-protect"><i class="fa-solid fa-eye" style="margin-right:6px;" aria-hidden="true"></i>僅供作品展示</div>
+          <div class="case-image case-image--yunxusuo" role="img" aria-label="雲絮所衣物香氛一頁式設計局部預覽" style="background-image: url('case-yunxuhome.jpg');"></div>
+        </div>
+        <div class="case-info">
+          <h3>柔和氛圍導向<br>一頁式品牌視覺 (4)</h3>
+          <p>以溫暖柔和的色調與生活情境影像為主軸，結合商品特色、香氛介紹及使用方式，營造舒適自然的閱讀節奏，呈現品牌的細膩質感。</p>
+          <p class="case-design-focus"><strong>設計重點｜</strong>運用奶油米白色系、自然光影與適度留白，展現產品的生活美學，同時兼顧商品資訊的完整性與閱讀體驗。</p>
+          <button class="btn-outline" type="button" data-open="modal-yunxusuo"><i class="fa-solid fa-expand" aria-hidden="true"></i> 展開排版長圖</button>
         </div>
       </div>
 
@@ -1222,6 +1313,34 @@
 </div>
 
 <!-- ↑ 這裡是 modal-incense 的結束 -->
+
+  <!-- 新增一頁式案例 ③：LION 衣物去漬產品長圖 -->
+  <div class="modal" id="modal-lion" aria-hidden="true" role="dialog" aria-modal="true" aria-label="LION 衣物去漬產品一頁式長圖展示">
+    <div class="modalPanel">
+      <div class="modalTop">
+        <b>案例展示｜機能資訊導向一頁式商品視覺</b>
+        <button type="button" class="closeBtn" data-close aria-label="關閉視窗">&times;</button>
+      </div>
+      <div class="modalBody">
+        <div class="caseImgWrap"><img src="case-lion.jpg" alt="LION 衣物去漬產品完整一頁式排版設計" loading="lazy" decoding="async"></div>
+        <p class="hint" style="margin-top:15px; color:#888; font-size:14px; line-height:1.6;">＊作品圖已含浮水印，僅供展示設計成果；未經授權請勿轉載或使用。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新增一頁式案例 ④：雲絮所衣物香氛長圖 -->
+  <div class="modal" id="modal-yunxusuo" aria-hidden="true" role="dialog" aria-modal="true" aria-label="雲絮所衣物香氛一頁式長圖展示">
+    <div class="modalPanel">
+      <div class="modalTop">
+        <b>案例展示｜柔和氛圍導向一頁式品牌視覺</b>
+        <button type="button" class="closeBtn" data-close aria-label="關閉視窗">&times;</button>
+      </div>
+      <div class="modalBody">
+        <div class="caseImgWrap"><img src="case-yunxuhome.jpg" alt="雲絮所衣物香氛完整一頁式排版設計" loading="lazy" decoding="async"></div>
+        <p class="hint" style="margin-top:15px; color:#888; font-size:14px; line-height:1.6;">＊作品圖已含浮水印，僅供展示設計成果；未經授權請勿轉載或使用。</p>
+      </div>
+    </div>
+  </div>
 
 <!-- ★ 在這裡貼上 Sho 的太陽能圖說彈窗 ★ -->
 
